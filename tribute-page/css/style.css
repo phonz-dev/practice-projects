@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap");
+
+html {
+	font-family: "Open Sans", sans-serif;
+	background-color: #eae2df;
+	color: #474747;
+}
+
+nav {
+	position: absolute;
+	font-size: 1.5em;
+	display: flex;
+	left: 3.5em;
+	top: 1em;
+	font-weight: 200;
+}
+
+header {
+	position: absolute;
+	color: #eae2df;
+	top: 15em;
+	left: 5em;
+}
+
+nav p {
+	margin-right: 0.5em;
+}
+
+nav a {
+	color: white;
+}
+
+h2 {
+	text-align: center;
+	margin-bottom: 0.5em;
+}
+
+h3 {
+	margin-bottom: 0.5em;
+}
+
+p {
+	line-height: 1.5em;
+}
+
+a {
+	text-decoration: none;
+	transition: color 0.5s;
+}
+
+a:hover {
+	color: #acb2ba;
+}
+
+section {
+	max-width: 600px;
+	margin: 3em auto;
+}
+
+#main {
+	position: relative;
+}
+
+#title {
+	font-size: 3rem;
+}
+
+#subtitle {
+	font-size: 1.2rem;
+}
+
+#image {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+#img-caption {
+	text-align: center;
+}
+
+#tribute-info > * + * {
+	margin-top: 1.5em;
+}
+
+.biography p + p {
+	margin-top: 1.5em;
+}
+
+.quotes li {
+	list-style: none;
+	margin-bottom: 1.5em;
+	font-style: italic;
+}
+
+footer {
+	text-align: center;
+	padding: 1.5em;
+}
+
+#tribute-link {
+	color: #474747;
+}
