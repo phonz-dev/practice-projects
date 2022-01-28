@@ -1,0 +1,31 @@
+/* ====== UTILITIES ====== */
+
+.bg-img {
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	width: 100%;
+	height: 120px;
+	margin: 1.5em 0;
+}
+
+.marcus-bg1 {
+	background-image: url(../images/side-marcus.jpg);
+	background-size: contain;
+}
+
+.marcus-bg2 {
+	background-image: url(../images/half-marcus.jpg);
+	background-size: contain;
+	background-position-y: 220px;
+}
+
+.section-def {
+	width: 80%;
+	max-width: 800px;
+	margin: 0 auto;
+	font-size: 0.8rem;
+}
+
+.section-def h2 {
+	margin-bottom: 1em;
+}

@@ -73,39 +73,10 @@ footer a:hover {
 	color: #ffb826;
 }
 
-/* ====== UTILITIES ====== */
+/* ====== MEDIA QUERIES ====== */
 
-.bg-img {
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	width: 100%;
-	height: 120px;
-	margin: 1.5em 0;
-}
-
-.marcus-bg1 {
-	background-image: url(../images/side-marcus.jpg);
-	background-size: contain;
-}
-
-.marcus-bg2 {
-	background-image: url(../images/half-marcus.jpg);
-	background-size: contain;
-	background-position-y: 220px;
-}
-
-.section-def {
-	width: 80%;
-	max-width: 800px;
-	margin: 0 auto;
-	font-size: 0.8rem;
-}
-
-.section-def h2 {
-	margin-bottom: 1em;
-}
-
-@media (min-width: 768px) {
+/* ====== TABLET ====== */
+@media (min-width: 736px) {
 	#img-div {
 		margin-bottom: 3.5em;
 	}
@@ -126,7 +97,6 @@ footer a:hover {
 	}
 
 	footer {
-		/* padding: 2em 0; */
 		font-size: 0.9rem;
 		max-width: 800px;
 		margin-top: 4em;
@@ -213,6 +183,7 @@ footer a:hover {
 	}
 }
 
+/* ====== LAPTOP ====== */
 @media (min-width: 1000px) {
 	#img-div {
 		margin-bottom: 4.5em;
@@ -225,18 +196,17 @@ footer a:hover {
 
 	header {
 		font-size: 1.5rem;
-		left: 8.6em;
+		left: 9.2em;
 		top: 10em;
 	}
 
 	footer {
-		/* padding: 2em 0; */
 		font-size: 1rem;
 		margin-top: 5em;
 	}
 
 	#img-caption {
-		font-size: 0.8rem;
+		font-size: 0.9rem;
 	}
 
 	.marcus-bg1,
