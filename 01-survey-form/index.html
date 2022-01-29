@@ -10,7 +10,55 @@
 </head>
 
 <body>
+  <div class="container">
+    <header>
+      <h1 id="title">avionSchool Survey Form</h1>
+      <p id="description">Please tell us how we can improve</p>
+    </header>
 
+    <form action="/survey-handler" id="survey-form" method="post">
+
+      <ul>
+        <li>
+          <label for="name-label">
+            Name: <input type="text" name="user_name" id="name-label" placeholder="Enter your full name">
+          </label>
+        </li>
+        <li>
+          <label for="email-label">
+            Email: <input type="email" name="user_email" id="email-label" placeholder="johndoe@example.com">
+          </label>
+        </li>
+        <li>
+          <label for="number-label">
+            Age: <input type="number" name="user_age" id="number-label" min="18" max="60" placeholder="Enter your age">
+          </label>
+        </li>
+        <li>
+          <label for="dropdown">Which option best describes your current role?</label>
+          <select name="user_role" id="dropdown">
+            <option value="student">Student</option>
+            <option value="full-time-job">Full Time Job</option>
+            <option value="full-time-learner">Full Time Learner</option>
+            <option value="prefer-not-to-say">Prefer not to say</option>
+            <option value="other">Other</option>
+          </select>
+        </li>
+      </ul>
+
+      <fieldset>
+        <legend>Would you recommend Avion School to a friend?</legend>
+        <ul>
+          <li>
+            <label for="ans1">
+              <input type="radio" id="ans1" name="recommend" value="definitely">
+              Definitely
+            </label>
+          </li>
+        </ul>
+      </fieldset>
+    </form>
+  </div>
 </body>
 
 </html>
