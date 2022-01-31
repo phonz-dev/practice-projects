@@ -1,0 +1,13 @@
+@use "./config" as *;
+
+body {
+	font-family: $font-stack;
+}
+
+img {
+	width: 100%;
+}
+
+::placeholder {
+	color: $secondary-txt-clr;
+}

@@ -1,0 +1,17 @@
+@use "./config" as *;
+
+.container {
+	width: 80%;
+	margin: 50px auto;
+	border-radius: 10px;
+}
+
+.header-container {
+	padding: 50px;
+	background-color: $header-bg-clr;
+	border-radius: 10px;
+}
+
+@mixin set-border-color($color) {
+	border: 1px solid $color;
+}
