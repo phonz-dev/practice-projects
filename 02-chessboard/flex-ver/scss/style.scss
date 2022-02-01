@@ -19,6 +19,11 @@ body {
 .tile {
 	height: 80px;
 	width: 80px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 50px;
+	font-weight: 800;
 
 	&--black {
 		background-image: url(../images/black-marble.jpg);
