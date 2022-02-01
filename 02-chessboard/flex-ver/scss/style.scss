@@ -1,1 +1,35 @@
 @use "reset";
+
+body {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #e3e8ff;
+}
+
+.board {
+	height: 648px;
+	width: 648px;
+	border: 4px solid slategray;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.tile {
+	height: 80px;
+	width: 80px;
+
+	&--black {
+		background-image: url(../images/black-marble.jpg);
+	}
+
+	&--white {
+		background-image: url(../images/white-marble.jpg);
+	}
+
+	&--black,
+	&--white {
+		background-size: cover;
+	}
+}
