@@ -11,6 +11,7 @@ body {
   display: grid;
   place-content: center;
   background-color: #bcbdbd;
+  overflow: hidden;
 }
 
 .board {

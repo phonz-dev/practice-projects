@@ -5,6 +5,7 @@ body {
 	display: grid;
 	place-content: center;
 	background-color: #bcbdbd;
+	overflow: hidden;
 }
 
 .board {
@@ -19,7 +20,6 @@ body {
 .tile {
 	display: grid;
 	place-content: center;
-	// color: #626375;
 	color: #f3f4f6;
 	font-size: 60px;
 
