@@ -12,6 +12,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #e3e8ff;
+  overflow: hidden;
 }
 
 .board {
@@ -42,7 +43,7 @@ body {
   background-size: cover;
 }
 
-.ate {
+.abs-pawn {
   position: absolute;
   top: 3px;
   left: -80px;
