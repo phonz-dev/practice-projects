@@ -16,8 +16,8 @@ body {
 }
 
 .board {
-  height: 648px;
-  width: 648px;
+  height: 45vw;
+  width: 45vw;
   border: 4px solid slategray;
   display: flex;
   flex-wrap: wrap;
@@ -25,12 +25,12 @@ body {
 }
 
 .tile {
-  height: 80px;
-  width: 80px;
+  height: 12.5%;
+  width: 12.5%;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 60px;
+  font-size: 4vw;
   color: #d2964d;
 }
 .tile--black {
@@ -41,12 +41,6 @@ body {
 }
 .tile--black, .tile--white {
   background-size: cover;
-}
-
-.abs-pawn {
-  position: absolute;
-  top: 3px;
-  left: -80px;
 }
 
 /*# sourceMappingURL=style.css.map */
