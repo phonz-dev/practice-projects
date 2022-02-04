@@ -1,0 +1,32 @@
+@use "./config" as *;
+
+body {
+	font-family: $font-stack;
+	background-color: $smoke-white;
+}
+
+p {
+	color: $gray;
+}
+
+ul {
+	list-style: none;
+}
+
+img {
+	width: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+* + * {
+	margin-top: 1.5em;
+}
+
+.container {
+	width: 90%;
+	max-width: 1110px;
+	margin: 3rem auto;
+}

@@ -1,0 +1,25 @@
+@use "./config" as *;
+
+.btn {
+	background-color: $light-purple;
+	border: none;
+	color: $smoke-white;
+	border-radius: 5px;
+	font-weight: bold;
+	cursor: pointer;
+
+	&--small {
+		padding: 1rem 1.5rem;
+		font-size: 0.9rem;
+	}
+
+	&--large {
+		padding: 1.5rem 2rem;
+		font-size: 1.1rem;
+	}
+
+	&--free-txt {
+		font-weight: normal;
+		font-style: italic;
+	}
+}

@@ -5,12 +5,58 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="./assets/logo.png">
   <link rel="stylesheet" href="./css/main.css">
   <title>Pinoy Brew</title>
 </head>
 
 <body>
+  <div class="container">
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <div class="navbar__logo">
+        <span class="navbar__logo-img">
+          <img src="./assets/logo.png" alt="Pinoy Brew Logo">
+        </span>
+        <div class="navbar__logo-name">PinoyBrew</div>
+      </div>
 
+      <input type="checkbox" class="navbar__toggler">
+
+      <div class="navbar__burger-menu">
+        <img src="./assets/hamburger-menu.svg" alt="Menu">
+      </div>
+
+      <ul class="navbar__menu">
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">Support</a></li>
+        <li><button class="btn btn--small">Get Started &#8212; <span class="btn--free-txt">it&#39;s free</span></button>
+        </li>
+      </ul>
+    </nav>
+
+    <main>
+      <!-- SHOWCASE -->
+      <section class="showcase">
+        <div class="showcase__illustration">
+          <img src="./assets/feed-mockup.png" alt="">
+        </div>
+
+        <div class="showcase__description">
+          <h1>Your weekly personal feed digest.</h1>
+          <p>With PinoyBrew, get personal feeds from resources all around the web, including Reddit, HackerNews,
+            IndieHackers, and much more.</p>
+
+          <button class="btn">Get Started &#8212; <span class="btn--free-txt">it&#39;s free</span></button>
+
+          <div class="showcase__join">
+            <img class="showcase__join-avatars" src="./assets/user-avatars.svg" alt="">
+            <p>Join <span class="highlight-text">50,639</span> PinoyBrewers in curating their personal digest.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
 </body>
 
 </html>

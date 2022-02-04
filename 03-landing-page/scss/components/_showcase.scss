@@ -1,0 +1,13 @@
+.showcase {
+	display: flex;
+	flex-direction: column;
+	margin-top: 3rem;
+
+	h1 {
+		font-size: 3rem;
+	}
+
+	&__join-avatars {
+		width: 220px;
+	}
+}

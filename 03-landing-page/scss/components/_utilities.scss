@@ -1,0 +1,6 @@
+@use "./config" as *;
+
+.highlight-text {
+	color: $light-purple;
+	font-weight: bold;
+}

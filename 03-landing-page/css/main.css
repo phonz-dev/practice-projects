@@ -1,9 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap");
 *,
 *::before,
 *::after {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background-color: #fbf9f9;
+}
+
+p {
+  color: #97979f;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+* + * {
+  margin-top: 1.5em;
+}
+
+.container {
+  width: 90%;
+  max-width: 1110px;
+  margin: 3rem auto;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  position: relative;
+  margin-top: 0;
+}
+.navbar * {
+  margin-top: 0;
+}
+.navbar__logo {
+  display: flex;
+  align-items: center;
+}
+.navbar__logo-img {
+  margin-right: 5px;
+}
+.navbar__logo-name {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.navbar__toggler {
+  height: 25px;
+  width: 25px;
+  position: absolute;
+  right: 0;
+  opacity: 0;
+}
+.navbar__toggler:checked ~ .navbar__menu {
+  display: block;
+  display: flex;
+  align-items: center;
+  bottom: -30px;
+}
+.navbar__menu {
+  position: absolute;
+  display: none;
+  right: 0;
+}
+.navbar__menu li {
+  padding: 0 0.3rem;
+}
+.navbar__menu a {
+  color: #000;
+}
+
+.showcase {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+}
+.showcase h1 {
+  font-size: 3rem;
+}
+.showcase__join-avatars {
+  width: 220px;
+}
+
+.btn {
+  background-color: #664efc;
+  border: none;
+  color: #fbf9f9;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.btn--small {
+  padding: 1rem 1.5rem;
+  font-size: 0.9rem;
+}
+.btn--large {
+  padding: 1.5rem 2rem;
+  font-size: 1.1rem;
+}
+.btn--free-txt {
+  font-weight: normal;
+  font-style: italic;
+}
+
+.highlight-text {
+  color: #664efc;
+  font-weight: bold;
+}
+
+@media (min-width: 700px) {
+  p {
+    font-size: 1.1rem;
+  }
+
+  .navbar {
+    font-size: 1.1rem;
+  }
+  .navbar__toggler, .navbar__burger-menu {
+    display: none;
+  }
+  .navbar__menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .navbar__menu li {
+    padding: 1rem;
+  }
+
+  .showcase__illustration {
+    max-width: 50%;
+    align-self: center;
+  }
+  .showcase__description {
+    width: 570px;
+  }
+  .showcase__description h1 {
+    font-size: 3.5rem;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

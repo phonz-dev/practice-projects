@@ -1,1 +1,7 @@
-@use "reset";
+@use "./components/reset";
+@use "./components/base";
+@use "./components/navbar";
+@use "./components/showcase";
+@use "./components/button";
+@use "./components/utilities";
+@use "./components/responsive";

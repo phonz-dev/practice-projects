@@ -1,0 +1,39 @@
+@media (min-width: 700px) {
+	p {
+		font-size: 1.1rem;
+	}
+
+	.navbar {
+		font-size: 1.1rem;
+
+		&__toggler,
+		&__burger-menu {
+			display: none;
+		}
+
+		&__menu {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			li {
+				padding: 1rem;
+			}
+		}
+	}
+
+	.showcase {
+		&__illustration {
+			max-width: 50%;
+			align-self: center;
+		}
+
+		&__description {
+			width: 570px;
+
+			h1 {
+				font-size: 3.5rem;
+			}
+		}
+	}
+}
