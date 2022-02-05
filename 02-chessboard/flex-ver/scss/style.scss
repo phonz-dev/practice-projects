@@ -26,6 +26,7 @@ body {
 	align-items: center;
 	font-size: 4vw;
 	color: #d2964d;
+	position: relative;
 
 	&--black {
 		background-image: url(../images/black-marble.jpg);
@@ -38,5 +39,128 @@ body {
 	&--black,
 	&--white {
 		background-size: cover;
+	}
+}
+
+.e4 {
+	animation-name: e4;
+	animation-duration: 2s;
+	animation-delay: 2s;
+	position: absolute;
+	animation-fill-mode: forwards;
+}
+
+.e5 {
+	animation-name: e5;
+	animation-duration: 2s;
+	position: absolute;
+	animation-fill-mode: forwards;
+	animation-delay: 4s;
+	z-index: 1;
+}
+
+.b4 {
+	animation-name: b4;
+	animation-duration: 2s;
+	position: absolute;
+	animation-fill-mode: forwards;
+	animation-delay: 6s;
+}
+
+.nc6 {
+	animation-name: nc6;
+	animation-duration: 2s;
+	position: absolute;
+	animation-fill-mode: forwards;
+	animation-delay: 8s;
+	z-index: 1;
+}
+
+.qh5 {
+	animation-name: qh5;
+	animation-duration: 2s;
+	position: absolute;
+	animation-fill-mode: forwards;
+	animation-delay: 10s;
+	z-index: 1;
+}
+
+.d6 {
+	animation-name: d6;
+	animation-duration: 2s;
+	position: absolute;
+	animation-fill-mode: forwards;
+	animation-delay: 12s;
+	z-index: 1;
+}
+
+@keyframes e4 {
+	from {
+		bottom: 0;
+	}
+
+	to {
+		bottom: 155px;
+	}
+}
+
+@keyframes e5 {
+	from {
+		top: 0;
+	}
+
+	to {
+		top: 155px;
+	}
+}
+
+@keyframes b4 {
+	from {
+		bottom: 0;
+		right: 0;
+	}
+
+	to {
+		bottom: 235px;
+		right: 240px;
+	}
+}
+
+@keyframes nc6 {
+	0% {
+		top: 0;
+		left: 15px;
+	}
+
+	50% {
+		left: 15px;
+		top: 155px;
+	}
+
+	100% {
+		top: 155px;
+		left: 90px;
+	}
+}
+
+@keyframes d6 {
+	from {
+		top: 0;
+	}
+
+	to {
+		top: 80px;
+	}
+}
+
+@keyframes qh5 {
+	from {
+		left: 0;
+		bottom: 0;
+	}
+
+	to {
+		left: 315px;
+		bottom: 310px;
 	}
 }
