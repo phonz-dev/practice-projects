@@ -1,7 +1,7 @@
 // Collect all tiles
 const tiles = document.querySelectorAll(".tile");
 
-// Initialize global variables
+// Declare global variables
 let currentPick;
 let currentPickPosition;
 
@@ -35,19 +35,32 @@ const pickPiece = (tile) => {
 	// Otherwise, save the current pick information
 	currentPick = tile.textContent;
 	currentPickPosition = tile.getAttribute("id");
+	playPickSound();
 };
 
 const dropPiece = (tile) => {
 	// Set tile to current pick
 	tile.textContent = currentPick;
+	playDropSound();
 };
 
 const removePiece = (tile) => {
-	// Set tile to empty string
 	tile.textContent = "";
 };
 
 const resetPick = () => {
 	currentPick = undefined;
 	currentPickPosition = undefined;
+};
+
+const playPickSound = () => {
+	const sound = new Audio("./audio/pick-sound.wav");
+
+	sound.play();
+};
+
+const playDropSound = () => {
+	const sound = new Audio("./audio/drop-sound.wav");
+
+	sound.play();
 };
