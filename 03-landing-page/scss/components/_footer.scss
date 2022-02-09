@@ -1,0 +1,25 @@
+@use "./config" as *;
+
+.footer {
+	margin-top: 8rem;
+
+	* {
+		margin-top: 0.8rem;
+	}
+
+	p,
+	a {
+		color: $footer-txt-clr;
+	}
+
+	&__left {
+		:last-child {
+			margin-top: 1.5rem;
+		}
+	}
+
+	&__right {
+		display: grid;
+		grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+	}
+}

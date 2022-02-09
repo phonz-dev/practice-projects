@@ -71,6 +71,16 @@
 			flex: 1.5;
 		}
 	}
+
+	.footer {
+		display: flex;
+		gap: 35px;
+
+		&__left,
+		&__right {
+			flex: 1;
+		}
+	}
 }
 
 @media (min-width: 1000px) {
@@ -79,6 +89,23 @@
 
 		&__illustration {
 			order: 1;
+		}
+	}
+
+	.footer {
+		&__left {
+			flex: 1;
+		}
+
+		&__right {
+			flex: 2;
+			grid-template: 1fr / repeat(4, 1fr);
+
+			&-box {
+				display: grid;
+				justify-content: end;
+				align-content: start;
+			}
 		}
 	}
 }

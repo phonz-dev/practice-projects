@@ -1,5 +1,11 @@
+@use "./config" as *;
+
 .features {
 	margin-top: 10rem;
+
+	a {
+		color: $feat-link-clr;
+	}
 
 	h2 {
 		font-size: 2rem;
