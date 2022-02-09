@@ -12,6 +12,14 @@ body {
   background-color: #fbf9f9;
 }
 
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+  background-color: #fbf9f9;
+}
+
 p {
   color: #97979f;
 }
@@ -37,10 +45,12 @@ a {
   margin-top: 1.5em;
 }
 
-.container {
+.container,
+.navbar {
   width: 90%;
   max-width: 1110px;
   margin: 0 auto;
+  position: relative;
 }
 
 .navbar {
@@ -48,8 +58,7 @@ a {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 0;
-  position: relative;
-  margin-top: 0;
+  z-index: 15;
 }
 .navbar * {
   margin-top: 0;
@@ -93,7 +102,7 @@ a {
 .showcase {
   display: flex;
   flex-direction: column;
-  margin-top: 3rem;
+  margin-top: 8rem;
 }
 .showcase h1 {
   font-size: 3rem;

@@ -5,6 +5,14 @@ body {
 	background-color: $smoke-white;
 }
 
+header {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	z-index: 10;
+	background-color: $smoke-white;
+}
+
 p {
 	color: $gray;
 }
@@ -32,8 +40,10 @@ a {
 	margin-top: 1.5em;
 }
 
-.container {
+.container,
+.navbar {
 	width: 90%;
 	max-width: 1110px;
 	margin: 0 auto;
+	position: relative;
 }
