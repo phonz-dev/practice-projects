@@ -13,8 +13,15 @@ ul {
 	list-style: none;
 }
 
-img {
+img,
+video {
 	width: 100%;
+}
+
+video {
+	:focus {
+		border: none;
+	}
 }
 
 a {

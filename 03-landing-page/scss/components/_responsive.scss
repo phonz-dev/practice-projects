@@ -36,6 +36,41 @@
 			}
 		}
 	}
+
+	.features {
+		&__box {
+			display: flex;
+			align-items: center;
+			gap: 40px;
+
+			&:first-of-type .features__illustration,
+			&:last-of-type .features__illustration {
+				order: 1;
+			}
+
+			&:last-of-type .features__ {
+				&illustration {
+					flex: 1.5;
+				}
+
+				&description {
+					flex: 1;
+				}
+			}
+
+			+ .features__box {
+				margin-top: 4rem;
+			}
+		}
+
+		&__illustration {
+			flex: 1;
+		}
+
+		&__description {
+			flex: 1.5;
+		}
+	}
 }
 
 @media (min-width: 1000px) {
