@@ -21,5 +21,9 @@
 	&__right {
 		display: grid;
 		grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+
+		h3 {
+			margin-top: 0;
+		}
 	}
 }

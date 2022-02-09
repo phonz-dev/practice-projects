@@ -109,7 +109,7 @@ a {
   font-size: 3rem;
 }
 .showcase__join-avatars {
-  width: 210px;
+  width: 200px;
 }
 
 .features {
@@ -142,6 +142,9 @@ a {
 .footer__right {
   display: grid;
   grid-template: repeat(2, 1fr)/repeat(2, 1fr);
+}
+.footer__right h3 {
+  margin-top: 0;
 }
 
 .btn {
