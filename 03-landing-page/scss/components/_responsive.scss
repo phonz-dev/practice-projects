@@ -37,3 +37,13 @@
 		}
 	}
 }
+
+@media (min-width: 1000px) {
+	.showcase {
+		flex-direction: row;
+
+		&__illustration {
+			order: 1;
+		}
+	}
+}

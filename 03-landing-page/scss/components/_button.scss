@@ -7,16 +7,16 @@
 	border-radius: 5px;
 	font-weight: bold;
 	cursor: pointer;
+	padding: 1rem 1.5rem;
+	font-size: 0.9rem;
 
-	&--small {
-		padding: 1rem 1.5rem;
-		font-size: 0.9rem;
-	}
+	// &--small {
+	// }
 
-	&--large {
-		padding: 1.5rem 2rem;
-		font-size: 1.1rem;
-	}
+	// &--large {
+	// 	padding: 1.5rem 2rem;
+	// 	font-size: 1.1rem;
+	// }
 
 	&--free-txt {
 		font-weight: normal;

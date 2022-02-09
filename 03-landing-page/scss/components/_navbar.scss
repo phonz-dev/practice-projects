@@ -4,7 +4,6 @@
 	align-items: center;
 	padding: 1rem 0;
 	position: relative;
-
 	margin-top: 0;
 
 	* {
@@ -45,7 +44,7 @@
 		display: none;
 		right: 0;
 
-		li {
+		&-link {
 			padding: 0 0.3rem;
 		}
 

@@ -35,7 +35,7 @@ a {
 .container {
   width: 90%;
   max-width: 1110px;
-  margin: 3rem auto;
+  margin: 0 auto;
 }
 
 .navbar {
@@ -78,7 +78,7 @@ a {
   display: none;
   right: 0;
 }
-.navbar__menu li {
+.navbar__menu-link {
   padding: 0 0.3rem;
 }
 .navbar__menu a {
@@ -94,7 +94,7 @@ a {
   font-size: 3rem;
 }
 .showcase__join-avatars {
-  width: 220px;
+  width: 210px;
 }
 
 .btn {
@@ -104,14 +104,8 @@ a {
   border-radius: 5px;
   font-weight: bold;
   cursor: pointer;
-}
-.btn--small {
   padding: 1rem 1.5rem;
   font-size: 0.9rem;
-}
-.btn--large {
-  padding: 1.5rem 2rem;
-  font-size: 1.1rem;
 }
 .btn--free-txt {
   font-weight: normal;
@@ -152,6 +146,14 @@ a {
   }
   .showcase__description h1 {
     font-size: 3.5rem;
+  }
+}
+@media (min-width: 1000px) {
+  .showcase {
+    flex-direction: row;
+  }
+  .showcase__illustration {
+    order: 1;
   }
 }
 
