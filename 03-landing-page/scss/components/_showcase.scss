@@ -1,3 +1,5 @@
+@use "./config" as *;
+
 .showcase {
 	display: flex;
 	flex-direction: column;
@@ -7,7 +9,14 @@
 		font-size: 3rem;
 	}
 
-	&__join-avatars {
-		width: 200px;
+	&__join {
+		span {
+			color: $light-purple;
+			font-weight: bold;
+		}
+
+		&-avatars {
+			width: 200px;
+		}
 	}
 }

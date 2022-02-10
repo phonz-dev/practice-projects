@@ -7,6 +7,11 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+}
+
 body {
   font-family: "DM Sans", sans-serif;
   background-color: #fbf9f9;
@@ -117,6 +122,10 @@ a {
 }
 .showcase h1 {
   font-size: 3rem;
+}
+.showcase__join span {
+  color: #664efc;
+  font-weight: bold;
 }
 .showcase__join-avatars {
   width: 200px;
@@ -229,11 +238,6 @@ a {
 .btn--free-txt {
   font-weight: normal;
   font-style: italic;
-}
-
-.highlight-text {
-  color: #664efc;
-  font-weight: bold;
 }
 
 .pink-bg {
