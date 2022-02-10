@@ -1,3 +1,5 @@
+@use "./config" as *;
+
 .navbar {
 	display: flex;
 	justify-content: space-between;
@@ -48,6 +50,20 @@
 		}
 
 		a {
+			color: #000;
+		}
+	}
+
+	&__back-btn {
+		&-arrow {
+			background-color: $smoke-white;
+			border: 1px solid lighten($gray, 20%);
+			padding: 10px 15px;
+			border-radius: 5px;
+		}
+
+		&-desc {
+			display: none;
 			color: #000;
 		}
 	}

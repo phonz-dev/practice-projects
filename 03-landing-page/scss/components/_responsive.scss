@@ -20,6 +20,21 @@
 				padding: 1rem;
 			}
 		}
+
+		&__back-btn {
+			display: flex;
+			align-items: center;
+			gap: 15px;
+
+			// &-arrow {
+
+			// }
+
+			&-desc {
+				display: block;
+				font-weight: bold;
+			}
+		}
 	}
 
 	.showcase {
