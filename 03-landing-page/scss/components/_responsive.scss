@@ -26,10 +26,6 @@
 			align-items: center;
 			gap: 15px;
 
-			// &-arrow {
-
-			// }
-
 			&-desc {
 				display: block;
 				font-weight: bold;
@@ -104,6 +100,23 @@
 
 		&__illustration {
 			order: 1;
+		}
+	}
+
+	.form {
+		display: flex;
+
+		&__features,
+		&__signup {
+			flex: 1;
+		}
+
+		&__features {
+			padding: 4.5rem;
+		}
+
+		&__signup {
+			padding: 3.5rem;
 		}
 	}
 

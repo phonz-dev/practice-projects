@@ -48,7 +48,7 @@
           </li>
           <li class="form__features-box">
             <div class="form__features-emoji">
-              🗞
+              🗞️
             </div>
             <p class="form__features-desc">
               <span>Delivered weekly. </span>
@@ -67,6 +67,35 @@
           </li>
         </ul>
       </div>
+
+      <form action="" class="form__signup">
+        <h2>Create your PinoyBrew Account</h2>
+
+        <div>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="user_email" placeholder="you@example.com">
+        </div>
+
+        <div>
+          <label for="fullname">Full Name</label>
+          <input type="text" id="fullname" name="user_name" placeholder="Your Name">
+        </div>
+
+        <div>
+          <label for="password">Password</label>
+          <input type="password" id="password" name="user_password" placeholder="At least 8 characters">
+        </div>
+
+        <div class="form__signup-terms">
+          <input type="checkbox" name="isAgreeToTerms" id="terms" value="true">
+
+          <label for="terms">
+            By creating an account on PinoyBrew, you agree to the <a href="#">Terms &#38; Conditions</a>.
+          </label>
+        </div>
+
+        <button class="btn btn--large">Create an Account</button>
+      </form>
     </div>
   </div>
 </body>

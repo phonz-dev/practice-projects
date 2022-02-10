@@ -10,6 +10,10 @@
 	padding: 1rem 1.5rem;
 	font-size: 0.9rem;
 
+	&--large {
+		width: 100%;
+	}
+
 	&--free-txt {
 		font-weight: normal;
 		font-style: italic;

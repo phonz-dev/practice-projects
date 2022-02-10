@@ -1,3 +1,5 @@
+@use "./config" as *;
+
 .form {
 	margin-top: 8rem;
 
@@ -15,6 +17,54 @@
 
 		span {
 			font-weight: bold;
+		}
+	}
+
+	&__signup {
+		background-color: $smoke-white;
+		padding: 1.8rem;
+		border-radius: 10px;
+		margin-top: 0;
+
+		div {
+			display: flex;
+			flex-direction: column;
+
+			label {
+				font-weight: bold;
+			}
+
+			input {
+				padding: 1rem;
+				font-size: 1rem;
+				margin-top: 0.5rem;
+				border: 1px solid $gray;
+				border-radius: 5px;
+			}
+		}
+
+		:nth-child(5) {
+			flex-direction: row;
+
+			input {
+				margin-right: 10px;
+				position: relative;
+				top: 4px;
+			}
+
+			input,
+			label {
+				margin-top: 0;
+			}
+
+			label {
+				font-weight: normal;
+
+				a {
+					font-weight: bold;
+					text-decoration: underline;
+				}
+			}
 		}
 	}
 }
