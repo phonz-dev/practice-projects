@@ -49,9 +49,13 @@
 			padding: 0 0.3rem;
 		}
 
-		a {
-			color: #000;
+		&-link:last-of-type {
+			padding-right: 0;
 		}
+	}
+
+	&__link {
+		color: #000;
 	}
 
 	&__back-btn {

@@ -8,9 +8,11 @@
 	font-weight: bold;
 	cursor: pointer;
 	padding: 1rem 1.5rem;
-	font-size: 0.9rem;
+	font-size: 1rem;
+	display: block;
+	width: fit-content;
 
-	&--large {
+	&--expand {
 		width: 100%;
 	}
 

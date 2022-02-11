@@ -101,7 +101,10 @@ a {
 .navbar__menu-link {
   padding: 0 0.3rem;
 }
-.navbar__menu a {
+.navbar__menu-link:last-of-type {
+  padding-right: 0;
+}
+.navbar__link {
   color: #000;
 }
 .navbar__back-btn-arrow {
@@ -230,9 +233,11 @@ a {
   font-weight: bold;
   cursor: pointer;
   padding: 1rem 1.5rem;
-  font-size: 0.9rem;
+  font-size: 1rem;
+  display: block;
+  width: fit-content;
 }
-.btn--large {
+.btn--expand {
   width: 100%;
 }
 .btn--free-txt {
