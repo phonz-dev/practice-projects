@@ -1,0 +1,13 @@
+.welcome {
+	margin-top: 8rem;
+
+	&__closing {
+		display: flex;
+		gap: 10px;
+
+		span {
+			display: block;
+			width: 25px;
+		}
+	}
+}

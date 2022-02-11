@@ -245,6 +245,18 @@ a {
   font-style: italic;
 }
 
+.welcome {
+  margin-top: 8rem;
+}
+.welcome__closing {
+  display: flex;
+  gap: 10px;
+}
+.welcome__closing span {
+  display: block;
+  width: 25px;
+}
+
 .pink-bg {
   background-color: #f9eef9;
 }
