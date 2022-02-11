@@ -3,3 +3,25 @@
 .pink-bg {
 	background-color: $light-pink;
 }
+
+.link-animation {
+	position: relative;
+}
+
+.link-animation::before {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 2px;
+	background-color: $light-purple;
+	transform-origin: bottom right;
+	transform: scaleX(0);
+	transition: transform 0.5s ease;
+}
+
+.link-animation:hover::before {
+	transform-origin: bottom left;
+	transform: scaleX(1);
+}
