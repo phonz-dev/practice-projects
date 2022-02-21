@@ -17,6 +17,7 @@ body {
   background-size: cover;
   background-attachment: fixed;
   background-position: center center;
+  background-color: #222;
 }
 
 .container {
@@ -57,6 +58,22 @@ body {
 }
 .focus__input:focus {
   outline: none;
+}
+.focus__item {
+  margin-top: 1rem;
+  gap: 5px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.focus__item-title {
+  text-transform: uppercase;
+}
+.focus__item-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .footer {

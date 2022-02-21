@@ -19,12 +19,22 @@
     </h1>
 
     <div class="focus">
-      <h2 class="focus__title">
-        What is your main focus for today?
-      </h2>
+      <div class="focus__prompt">
+        <h2 class="focus__title">
+          What is your main focus for today?
+        </h2>
+        <input type="text" class="focus__input">
+      </div>
 
-      <input type="text" class="focus__input">
+      <div class="focus__item">
+        <h3 class="focus__item-title">Today</h3>
+        <div class="focus__item-wrapper">
+          <input type="checkbox" name="focus-item" id="focus-item">
+          <label class="focus__item-label" for="focus-item"></label>
+        </div>
+      </div>
     </div>
+
   </main>
 
   <footer class="footer">
