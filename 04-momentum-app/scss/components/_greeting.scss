@@ -1,0 +1,13 @@
+.greeting {
+	text-align: center;
+
+	&__clock {
+		font-size: 4rem;
+	}
+
+	&__message {
+		font-weight: normal;
+		font-size: 1.5rem;
+		padding: 0 2rem;
+	}
+}

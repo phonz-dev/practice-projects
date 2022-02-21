@@ -1,6 +1,20 @@
+@use "./config" as *;
+
+html {
+	overflow: hidden;
+}
+
 body {
+	color: #fff;
+	font-family: $font-stack;
 	background-image: url(../images/galaxy.jpg);
 	background-size: cover;
 	background-attachment: fixed;
 	background-position: center center;
+}
+
+.container {
+	width: 90%;
+	margin: 10rem auto 0;
+	text-align: center;
 }
