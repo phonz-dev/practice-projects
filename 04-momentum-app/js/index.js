@@ -1,14 +1,34 @@
+import { Todo } from "./components/todo.js";
+
 const clock = document.querySelector(".greeting__clock");
 const dayPart = document.querySelector(".day-part");
+
 const mainFocusPrompt = document.querySelector(".focus__prompt");
 const mainFocus = document.querySelector(".focus__input");
 
-const todoBtn = document.querySelector(".footer__todo-title");
+const todoBtn = document.querySelector(".footer__todo-btn");
+const todoList = document.querySelector(".footer__todo-list");
+const todoInput = document.querySelector(".footer__todo-input");
+const todoModal = document.querySelector(".footer__todo-modal");
+
+todoBtn.addEventListener("click", () => {
+	todoModal.classList.toggle("hide");
+});
+
+todoInput.addEventListener("keypress", (event) => {
+	if (event.key === "Enter" && todoInput.value) {
+		const todo = new Todo(todoInput.value);
+		const newTodo = todo.createTodo();
+
+		todoInput.value = "";
+		todoList.appendChild(newTodo);
+	}
+});
 
 mainFocus.addEventListener("keypress", (event) => {
 	const focusItem = document.querySelector(".focus__item");
 	const todaysFocus = document.querySelector(".focus__item-label");
-	if (event.key === "Enter") {
+	if (event.key === "Enter" && mainFocus.value) {
 		todaysFocus.textContent = mainFocus.value;
 		mainFocusPrompt.style.display = "none";
 		focusItem.style.display = "flex";

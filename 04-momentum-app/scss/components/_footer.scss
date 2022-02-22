@@ -1,5 +1,6 @@
 .footer {
 	width: 90%;
+	position: relative;
 	align-self: center;
 	display: grid;
 	grid-template-rows: repeat(2, 1fr);
@@ -21,5 +22,47 @@
 
 	&__todo {
 		justify-self: end;
+
+		&-btn {
+			cursor: pointer;
+			font-weight: normal;
+		}
+
+		&-modal {
+			position: absolute;
+			background-color: white;
+			padding: 15px;
+			right: 0;
+			bottom: 35px;
+			width: 300px;
+			height: 300px;
+			border-radius: 5px;
+		}
+
+		&-modal-btn {
+			padding: 5px 15px;
+		}
+
+		&-input {
+			position: absolute;
+			padding: 5px;
+			bottom: 5px;
+			border: none;
+			font-size: 1rem;
+		}
+
+		&-input:focus {
+			outline: none;
+		}
+
+		&-list {
+			color: #000;
+
+			li {
+				display: flex;
+				gap: 5px;
+				align-items: center;
+			}
+		}
 	}
 }

@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="./js/index.js" defer></script>
+  <script type="module" src="./js/index.js" defer></script>
   <link rel="stylesheet" href="./css/main.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
   <title>Momentum App</title>
@@ -43,12 +43,13 @@
     <div class="footer__setting">Setting</div>
 
     <div class="footer__todo">
-      <h4 class="footer__todo-title">Todo</h4>
+      <h4 class="footer__todo-btn">Todo</h4>
+    </div>
 
-      <div class="footer__todo-modal-wrapper">
-        <ul class="footer__todo-modal"></ul>
-
-      </div>
+    <div class="footer__todo-modal hide">
+      <!-- <button class="footer__todo-modal-btn">New Todo</button> -->
+      <ul class="footer__todo-list"></ul>
+      <input class="footer__todo-input" type="text" placeholder="New Todo">
     </div>
   </footer>
 </body>
