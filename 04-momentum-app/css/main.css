@@ -29,6 +29,11 @@ ul {
   list-style-type: none;
 }
 
+[type=checkbox]:checked + label {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
 .container {
   width: 90%;
   text-align: center;
