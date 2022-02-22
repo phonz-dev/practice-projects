@@ -2,6 +2,7 @@
 
 html {
 	overflow: hidden;
+	font-size: calc(1vw + 0.6em);
 }
 
 body {
@@ -28,6 +29,5 @@ ul {
 	display: flex;
 	flex-direction: column;
 	align-self: center;
-	// outline: 1px solid black;
 	gap: 10rem;
 }

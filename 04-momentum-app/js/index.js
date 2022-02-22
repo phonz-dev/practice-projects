@@ -1,6 +1,4 @@
 import {
-	clock,
-	dayPart,
 	mainFocusPrompt,
 	mainFocus,
 	todoBtn,

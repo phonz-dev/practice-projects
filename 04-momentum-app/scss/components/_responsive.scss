@@ -1,0 +1,30 @@
+@media (min-width: 700px) {
+	.container {
+		gap: 4rem;
+	}
+
+	.footer {
+		grid-template-columns: repeat(3, 1fr);
+		gap: 0;
+
+		&__setting,
+		&__todo {
+			align-self: center;
+		}
+
+		&__setting {
+			grid-column: 1 / 2;
+			grid-row: 2 / 3;
+		}
+
+		&__quote {
+			grid-column: 2 / 3;
+			grid-row: 2 / 3;
+		}
+
+		&__todo {
+			grid-column: 3 / 4;
+			grid-row: 2 / 3;
+		}
+	}
+}
