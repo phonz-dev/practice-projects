@@ -126,7 +126,7 @@ ul {
   padding: 5px;
   bottom: 5px;
   border: none;
-  font-size: 1rem;
+  font-size: 0.8rem;
 }
 .footer__todo-input:focus {
   outline: none;
@@ -138,6 +138,7 @@ ul {
   display: flex;
   gap: 5px;
   align-items: center;
+  font-size: 0.8rem;
 }
 
 .hide {
@@ -167,6 +168,9 @@ ul {
   .footer__todo {
     grid-column: 3/4;
     grid-row: 2/3;
+  }
+  .footer__todo-modal {
+    bottom: 70px;
   }
 }
 
