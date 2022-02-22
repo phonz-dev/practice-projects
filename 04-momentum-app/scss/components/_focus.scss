@@ -1,5 +1,5 @@
 .focus {
-	margin-top: 10rem;
+	// margin-bottom: 8rem;
 
 	&__title {
 		font-weight: normal;
@@ -24,7 +24,7 @@
 
 	&__item {
 		margin-top: 1rem;
-		gap: 5px;
+		// gap: 5px;
 		display: none;
 		align-items: center;
 		justify-content: center;
@@ -32,6 +32,7 @@
 
 		&-title {
 			text-transform: uppercase;
+			font-weight: normal;
 		}
 
 		// &-label {

@@ -18,17 +18,21 @@ body {
   background-attachment: fixed;
   background-position: center center;
   background-color: #222;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100vh;
 }
 
 .container {
   width: 90%;
-  margin: 10rem auto 0;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  gap: 10rem;
 }
 
-.greeting {
-  text-align: center;
-}
 .greeting__clock {
   font-size: 4rem;
 }
@@ -38,9 +42,6 @@ body {
   padding: 0 2rem;
 }
 
-.focus {
-  margin-top: 10rem;
-}
 .focus__title {
   font-weight: normal;
   font-size: 1.2rem;
@@ -61,7 +62,6 @@ body {
 }
 .focus__item {
   margin-top: 1rem;
-  gap: 5px;
   display: none;
   align-items: center;
   justify-content: center;
@@ -69,6 +69,7 @@ body {
 }
 .focus__item-title {
   text-transform: uppercase;
+  font-weight: normal;
 }
 .focus__item-wrapper {
   display: inline-flex;
@@ -78,7 +79,7 @@ body {
 
 .footer {
   width: 90%;
-  margin: 8rem auto;
+  align-self: center;
   display: grid;
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(2, 1fr);

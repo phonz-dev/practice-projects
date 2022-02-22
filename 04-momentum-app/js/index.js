@@ -3,6 +3,8 @@ const dayPart = document.querySelector(".day-part");
 const mainFocusPrompt = document.querySelector(".focus__prompt");
 const mainFocus = document.querySelector(".focus__input");
 
+const todoBtn = document.querySelector(".footer__todo-title");
+
 mainFocus.addEventListener("keypress", (event) => {
 	const focusItem = document.querySelector(".focus__item");
 	const todaysFocus = document.querySelector(".focus__item-label");

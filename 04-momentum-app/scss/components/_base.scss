@@ -12,10 +12,18 @@ body {
 	background-attachment: fixed;
 	background-position: center center;
 	background-color: #222;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	height: 100vh;
 }
 
 .container {
 	width: 90%;
-	margin: 10rem auto 0;
 	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-self: center;
+	// outline: 1px solid black;
+	gap: 10rem;
 }
