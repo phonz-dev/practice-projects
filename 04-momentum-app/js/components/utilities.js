@@ -1,4 +1,4 @@
-import { clock, dayPart } from "./globals.js";
+import { clock, dayPart, quote, randomQuote } from "./globals.js";
 
 const displayDayPart = (currentHour) => {
 	const [midDay, lateNoon] = [12, 17];
@@ -32,4 +32,8 @@ const displayTime = () => {
 	setTimeout(displayTime, 800);
 };
 
-export { displayTime };
+const displayQuote = () => {
+	quote.textContent = randomQuote;
+};
+
+export { displayTime, displayQuote };

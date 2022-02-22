@@ -6,8 +6,9 @@ import {
 	todoModal,
 	todoInput,
 } from "./components/globals.js";
+
 import { Todo } from "./components/todo.js";
-import { displayTime } from "./components/utilities.js";
+import { displayTime, displayQuote } from "./components/utilities.js";
 
 todoBtn.addEventListener("click", () => {
 	todoModal.classList.toggle("hide");
@@ -34,3 +35,4 @@ mainFocus.addEventListener("keypress", (event) => {
 });
 
 window.addEventListener("load", displayTime);
+window.addEventListener("load", displayQuote);
