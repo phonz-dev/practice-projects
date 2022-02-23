@@ -2,12 +2,12 @@ import {
 	mainFocusPrompt,
 	mainFocus,
 	todoBtn,
-	todoList,
+	todoListWrapper,
 	todoModal,
 	todoInput,
 } from "./components/globals.js";
 
-import { Todo } from "./components/todo.js";
+import { todoList } from "./components/globals.js";
 import { displayTime, displayQuote } from "./components/utilities.js";
 
 todoBtn.addEventListener("click", () => {
@@ -16,11 +16,11 @@ todoBtn.addEventListener("click", () => {
 
 todoInput.addEventListener("keypress", (event) => {
 	if (event.key === "Enter" && todoInput.value) {
-		const todo = new Todo(todoInput.value);
-		const newTodo = todo.createTodo();
+		const newTodo = todoInput.value;
 
+		todoList.addTodo(newTodo);
+		todoList.list.forEach((todo) => todoListWrapper.appendChild(todo));
 		todoInput.value = "";
-		todoList.appendChild(newTodo);
 	}
 });
 

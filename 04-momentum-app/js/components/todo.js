@@ -1,13 +1,13 @@
-class Todo {
+class TodoList {
 	constructor() {
-		this.tasks = [];
+		this.list = [];
 		this.length = 0;
 	}
 
 	addTodo(description) {
 		const newTodo = this.createTodo(description);
 
-		this.tasks.push(newTodo);
+		this.list.push(newTodo);
 		this.length++;
 
 		return this.length;
@@ -26,4 +26,4 @@ class Todo {
 	}
 }
 
-export { Todo };
+export { TodoList };

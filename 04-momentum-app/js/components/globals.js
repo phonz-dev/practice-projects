@@ -1,4 +1,5 @@
 import { RandomQuoteGenerator } from "./random-quote.js";
+import { TodoList } from "./todo.js";
 
 const clock = document.querySelector(".greeting__clock");
 const dayPart = document.querySelector(".day-part");
@@ -7,9 +8,10 @@ const mainFocusPrompt = document.querySelector(".focus__prompt");
 const mainFocus = document.querySelector(".focus__input");
 
 const todoBtn = document.querySelector(".footer__todo-btn");
-const todoList = document.querySelector(".footer__todo-list");
+const todoListWrapper = document.querySelector(".footer__todo-list");
 const todoInput = document.querySelector(".footer__todo-input");
 const todoModal = document.querySelector(".footer__todo-modal");
+const todoList = new TodoList();
 
 const quote = document.querySelector(".footer__quote");
 
@@ -28,9 +30,10 @@ export {
 	mainFocusPrompt,
 	mainFocus,
 	todoBtn,
-	todoList,
+	todoListWrapper,
 	todoModal,
 	todoInput,
+	todoList,
 	quote,
 	randomQuote,
 };
