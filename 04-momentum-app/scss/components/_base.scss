@@ -28,6 +28,10 @@ ul {
 	opacity: 0.5;
 }
 
+[type="text"]:focus {
+	outline: none;
+}
+
 .container {
 	width: 90%;
 	text-align: center;

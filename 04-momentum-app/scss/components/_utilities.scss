@@ -1,3 +1,17 @@
 .hide {
 	display: none;
 }
+
+.user-name {
+	text-transform: capitalize;
+}
+
+.main-input {
+	width: 100%;
+	margin-top: 0.5rem;
+	border: none;
+	border-bottom: 2px solid white;
+	background-color: transparent;
+	text-align: center;
+	color: white;
+}

@@ -34,6 +34,10 @@ ul {
   opacity: 0.5;
 }
 
+[type=text]:focus {
+  outline: none;
+}
+
 .container {
   width: 90%;
   text-align: center;
@@ -59,16 +63,7 @@ ul {
 .focus__input {
   width: 100%;
   max-width: 500px;
-  margin-top: 0.5rem;
-  border: none;
-  border-bottom: 2px solid white;
-  background-color: transparent;
-  text-align: center;
-  color: white;
   font-size: 1.5rem;
-}
-.focus__input:focus {
-  outline: none;
 }
 .focus__item {
   margin-top: 1rem;
@@ -123,9 +118,6 @@ ul {
   height: 300px;
   border-radius: 5px;
 }
-.footer__todo-modal-btn {
-  padding: 5px 15px;
-}
 .footer__todo-input {
   position: absolute;
   padding: 5px;
@@ -148,6 +140,38 @@ ul {
 
 .hide {
   display: none;
+}
+
+.user-name {
+  text-transform: capitalize;
+}
+
+.main-input {
+  width: 100%;
+  margin-top: 0.5rem;
+  border: none;
+  border-bottom: 2px solid white;
+  background-color: transparent;
+  text-align: center;
+  color: white;
+}
+
+.sign-in-wrapper {
+  background-image: url(../images/sign-in-bg.jpg);
+  display: grid;
+  place-content: center;
+}
+.sign-in-form {
+  text-align: center;
+}
+.sign-in-form input {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  max-width: 600px;
+  margin-top: 0.5rem;
+}
+.sign-in-form__title {
+  margin-bottom: 1rem;
 }
 
 @media (min-width: 700px) {

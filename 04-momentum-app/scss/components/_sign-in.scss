@@ -1,0 +1,22 @@
+.sign-in {
+	&-wrapper {
+		background-image: url(../images/sign-in-bg.jpg);
+		display: grid;
+		place-content: center;
+	}
+
+	&-form {
+		text-align: center;
+
+		input {
+			font-size: 2rem;
+			margin-bottom: 1.5rem;
+			max-width: 600px;
+			margin-top: 0.5rem;
+		}
+	}
+
+	&-form__title {
+		margin-bottom: 1rem;
+	}
+}

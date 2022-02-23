@@ -7,8 +7,13 @@ import {
 	todoInput,
 } from "./components/globals.js";
 
+import {
+	displayTime,
+	displayQuote,
+	displayUserName,
+} from "./components/utilities.js";
+
 import { todoList } from "./components/globals.js";
-import { displayTime, displayQuote } from "./components/utilities.js";
 
 todoBtn.addEventListener("click", () => {
 	todoModal.classList.toggle("hide");
@@ -19,7 +24,7 @@ todoInput.addEventListener("keypress", (event) => {
 		const newTodo = todoInput.value;
 
 		todoList.addTodo(newTodo);
-		todoList.list.forEach((todo) => todoListWrapper.appendChild(todo));
+		todoListWrapper.append(...todoList.list);
 		todoInput.value = "";
 	}
 });
@@ -34,5 +39,8 @@ mainFocus.addEventListener("keypress", (event) => {
 	}
 });
 
-window.addEventListener("load", displayTime);
-window.addEventListener("load", displayQuote);
+window.addEventListener("load", () => {
+	displayTime();
+	displayQuote();
+	displayUserName();
+});

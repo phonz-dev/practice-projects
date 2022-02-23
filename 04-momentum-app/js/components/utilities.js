@@ -1,4 +1,11 @@
-import { clock, dayPart, quote, randomQuote } from "./globals.js";
+import {
+	clock,
+	dayPart,
+	quote,
+	randomQuote,
+	userNameWrapper,
+	userName,
+} from "./globals.js";
 
 const displayDayPart = (currentHour) => {
 	const [midDay, lateNoon] = [12, 17];
@@ -23,7 +30,7 @@ const displayTime = () => {
 	// Set to 12-hour format
 	hour = hour > 12 ? hour - 12 : hour;
 
-	// Give a nice 2 digit format
+	// Set to 2 digit format
 	hour = ("0" + hour).slice(-2);
 	minute = ("0" + minute).slice(-2);
 
@@ -36,4 +43,8 @@ const displayQuote = () => {
 	quote.textContent = randomQuote;
 };
 
-export { displayTime, displayQuote };
+const displayUserName = () => {
+	userNameWrapper.textContent = userName;
+};
+
+export { displayTime, displayQuote, displayUserName };
