@@ -12,47 +12,48 @@
 		text-align: center;
 	}
 
-	&__add-quote,
+	&__quote-btn,
 	&__todo {
 		align-self: flex-end;
 	}
 
-	&__add-quote,
+	&__quote-btn,
 	&__todo-btn {
 		justify-self: start;
 		cursor: pointer;
 		font-weight: normal;
 	}
 
+	&__quote-modal,
+	&__todo-modal {
+		position: absolute;
+		background-color: white;
+		padding: 15px;
+		bottom: 35px;
+		width: 300px;
+		height: 300px;
+		border-radius: 5px;
+		overflow: auto;
+	}
+
+	&__quote-modal {
+		left: 0;
+	}
+
+	&__quote-input,
+	&__todo-input {
+		position: absolute;
+		padding: 5px;
+		bottom: 5px;
+		border: none;
+		font-size: 0.8rem;
+	}
+
 	&__todo {
 		justify-self: end;
 
-		&-btn {
-			cursor: pointer;
-			font-weight: normal;
-		}
-
 		&-modal {
-			position: absolute;
-			background-color: white;
-			padding: 15px;
 			right: 0;
-			top: -260px;
-			width: 300px;
-			height: 300px;
-			border-radius: 5px;
-		}
-
-		&-input {
-			position: absolute;
-			padding: 5px;
-			bottom: 5px;
-			border: none;
-			font-size: 0.8rem;
-		}
-
-		&-input:focus {
-			outline: none;
 		}
 
 		&-list {

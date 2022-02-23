@@ -2,7 +2,7 @@ import {
 	clock,
 	dayPart,
 	quote,
-	randomQuote,
+	quoteGenerator,
 	userNameWrapper,
 	userName,
 } from "./globals.js";
@@ -40,6 +40,8 @@ const displayTime = () => {
 };
 
 const displayQuote = () => {
+	const randomQuote = quoteGenerator.generateRandomQuote();
+
 	quote.textContent = randomQuote;
 };
 

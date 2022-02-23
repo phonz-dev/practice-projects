@@ -7,14 +7,19 @@
 		grid-template-columns: repeat(3, 1fr);
 		gap: 0;
 
-		&__add-quote,
+		&__quote-btn,
 		&__todo {
 			align-self: center;
 		}
 
-		&__add-quote {
+		&__quote-btn {
 			grid-column: 1 / 2;
 			grid-row: 2 / 3;
+		}
+
+		&__quote-modal,
+		&__todo-modal {
+			bottom: 70px;
 		}
 
 		&__quote {
@@ -25,11 +30,6 @@
 		&__todo {
 			grid-column: 3 / 4;
 			grid-row: 2 / 3;
-
-			&-modal {
-				// bottom: 85px;
-				top: -295px;
-			}
 		}
 	}
 }

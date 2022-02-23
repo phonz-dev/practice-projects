@@ -5,6 +5,11 @@ import {
 	todoListWrapper,
 	todoModal,
 	todoInput,
+	quoteBtn,
+	addQuoteInput,
+	quoteGenerator,
+	quoteModal,
+	quote,
 } from "./components/globals.js";
 
 import {
@@ -17,6 +22,10 @@ import { todoList } from "./components/globals.js";
 
 todoBtn.addEventListener("click", () => {
 	todoModal.classList.toggle("hide");
+});
+
+quoteBtn.addEventListener("click", () => {
+	quoteModal.classList.toggle("hide");
 });
 
 todoInput.addEventListener("keypress", (event) => {

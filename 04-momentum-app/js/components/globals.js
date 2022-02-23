@@ -21,11 +21,14 @@ const todoList = new TodoList();
 const quote = document.querySelector(".footer__quote");
 const initialQuotes = [
 	"Waste no more time arguing what a good man should be. Be One.",
-	"It never ceases to amaze me: we all love ourselves more than other people, but care more about their opinion than our own.",
-	"The best revenge is not to be like your enemy",
+	"You could leave life right now. Let that determine what you do and say and think.",
+	"Be tolerant with others and strict with yourself.",
 ];
 const quoteGenerator = new RandomQuoteGenerator(...initialQuotes);
-const randomQuote = quoteGenerator.generateRandomQuote();
+// const randomQuote = quoteGenerator.generateRandomQuote();
+const quoteBtn = document.querySelector(".footer__quote-btn");
+const addQuoteInput = document.querySelector(".footer__quote-input");
+const quoteModal = document.querySelector(".footer__quote-modal");
 
 export {
 	clock,
@@ -38,7 +41,10 @@ export {
 	todoInput,
 	todoList,
 	quote,
-	randomQuote,
 	userNameWrapper,
 	userName,
+	quoteBtn,
+	addQuoteInput,
+	quoteGenerator,
+	quoteModal,
 };

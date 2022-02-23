@@ -95,40 +95,39 @@ ul {
   font-style: italic;
   text-align: center;
 }
-.footer__add-quote, .footer__todo {
+.footer__quote-btn, .footer__todo {
   align-self: flex-end;
 }
-.footer__add-quote, .footer__todo-btn {
+.footer__quote-btn, .footer__todo-btn {
   justify-self: start;
   cursor: pointer;
   font-weight: normal;
 }
-.footer__todo {
-  justify-self: end;
-}
-.footer__todo-btn {
-  cursor: pointer;
-  font-weight: normal;
-}
-.footer__todo-modal {
+.footer__quote-modal, .footer__todo-modal {
   position: absolute;
   background-color: white;
   padding: 15px;
-  right: 0;
-  top: -260px;
+  bottom: 35px;
   width: 300px;
   height: 300px;
   border-radius: 5px;
+  overflow: auto;
 }
-.footer__todo-input {
+.footer__quote-modal {
+  left: 0;
+}
+.footer__quote-input, .footer__todo-input {
   position: absolute;
   padding: 5px;
   bottom: 5px;
   border: none;
   font-size: 0.8rem;
 }
-.footer__todo-input:focus {
-  outline: none;
+.footer__todo {
+  justify-self: end;
+}
+.footer__todo-modal {
+  right: 0;
 }
 .footer__todo-list {
   color: #000;
@@ -185,12 +184,15 @@ ul {
     grid-template-columns: repeat(3, 1fr);
     gap: 0;
   }
-  .footer__add-quote, .footer__todo {
+  .footer__quote-btn, .footer__todo {
     align-self: center;
   }
-  .footer__add-quote {
+  .footer__quote-btn {
     grid-column: 1/2;
     grid-row: 2/3;
+  }
+  .footer__quote-modal, .footer__todo-modal {
+    bottom: 70px;
   }
   .footer__quote {
     grid-column: 2/3;
@@ -199,9 +201,6 @@ ul {
   .footer__todo {
     grid-column: 3/4;
     grid-row: 2/3;
-  }
-  .footer__todo-modal {
-    top: -295px;
   }
 }
 
