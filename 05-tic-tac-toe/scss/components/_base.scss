@@ -1,3 +1,22 @@
 body {
 	background-color: #121818;
+	height: 100vh;
+	font-family: sans-serif;
+	color: white;
+}
+
+button {
+	display: block;
+	width: 100%;
+	padding: 10px 15px;
+	border-radius: 5px;
+	border: none;
+}
+
+.container {
+	display: grid;
+	place-content: center;
+	width: 90%;
+	height: 100vh;
+	margin: 0 auto;
 }
