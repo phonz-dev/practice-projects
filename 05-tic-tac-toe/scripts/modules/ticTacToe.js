@@ -1,9 +1,9 @@
 export class TicTacToe {
-	constructor(board, domBoard, playerOne, playerTwo) {
+	constructor(board, domBoard) {
 		this.board = board;
 		this.domBoard = domBoard;
-		this.playerOne = playerOne;
-		this.playerTwo = playerTwo;
+		this.playerOne = this.board.markOne;
+		this.playerTwo = this.board.markTwo;
 		this.currentPlayer = this.playerOne;
 	}
 
@@ -12,10 +12,8 @@ export class TicTacToe {
 		this.#play(tiles);
 	}
 
-	#play(tileNodes) {
-		tileNodes.forEach((tile) => {
-			this.#processTile(tile);
-		});
+	#play(tiles) {
+		tiles.forEach((tile) => this.#processTile(tile));
 	}
 
 	#processTile(tile) {
