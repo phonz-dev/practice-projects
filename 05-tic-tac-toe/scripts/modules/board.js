@@ -5,6 +5,7 @@ export class Board {
 			["", "", ""],
 			["", "", ""],
 		];
+		this.history = [];
 	}
 
 	getPositions() {
@@ -17,6 +18,11 @@ export class Board {
 		const boardPositions = this.getPositions();
 		boardPositions.forEach((pos, i) => (map[i] = pos));
 		return map;
+	}
+
+	recordCurrentState() {
+		const gridCopy = this.grid.map((row) => row.slice());
+		this.history.push(gridCopy);
 	}
 
 	placeMark(pos, mark) {
