@@ -1,0 +1,21 @@
+.game-over-modal {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: black;
+
+	display: grid;
+	place-content: center;
+
+	&__wrapper {
+		* {
+			margin-top: 1.5rem;
+		}
+	}
+
+	&__msg {
+		text-align: center;
+	}
+}

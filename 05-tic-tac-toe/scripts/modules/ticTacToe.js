@@ -9,11 +9,11 @@ export class TicTacToe {
 
 	run() {
 		const tiles = this.UI.getTiles();
-		this.UI.playGame();
-		this.#play(tiles);
+		this.UI.init();
+		this.#startGame(tiles);
 	}
 
-	#play(tiles) {
+	#startGame(tiles) {
 		tiles.forEach((tile) => this.#processTile(tile));
 	}
 
@@ -29,21 +29,27 @@ export class TicTacToe {
 
 		const roundResult = this.board.isGameOver();
 		if (roundResult) {
-			this.UI.displayWinner(roundResult);
+			const msg = this.#getEndGameMessage(roundResult);
+			this.UI.displayEndGameMessage(msg);
 			this.UI.displayEndGameModal();
 		} else {
 			this.#switchPlayer();
 		}
 	}
 
-	#processBoard(tile) {
-		this.#markTileNode(tile);
-		this.#updateBoard(tile);
-		this.board.recordCurrentState();
+	#getEndGameMessage(result) {
+		const grid = this.board.grid;
+		if (this.board.isTie(grid)) {
+			return this.UI.tieMessage();
+		} else {
+			return this.UI.winnerMessage(result);
+		}
 	}
 
-	#markTileNode(tile) {
-		tile.textContent = this.currentPlayer;
+	#processBoard(tile) {
+		this.UI.markTile(tile, this.currentPlayer);
+		this.#updateBoard(tile);
+		this.board.recordCurrentState();
 	}
 
 	#updateBoard(tile) {

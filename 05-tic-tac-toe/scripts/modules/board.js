@@ -37,8 +37,14 @@ export class Board {
 			this.#isRowComplete(this.grid) ||
 			this.#isColumnComplete(this.grid) ||
 			this.#isDiagonalComplete(this.grid) ||
-			this.#isTie(this.grid)
+			this.isTie(this.grid)
 		);
+	}
+
+	isTie(grid) {
+		const tie = grid.every((row) => row.every((tile) => !this.#isEmpty(tile)));
+		if (tie) return "T";
+		return false;
 	}
 
 	#isDiagonalComplete(grid) {
@@ -54,12 +60,6 @@ export class Board {
 	#isRowComplete(rows) {
 		const result = this.#checkWinner(rows);
 		return result;
-	}
-
-	#isTie(grid) {
-		const tie = grid.every((row) => row.every((tile) => !this.#isEmpty(tile)));
-		if (tie) return "T";
-		return false;
 	}
 
 	#isEmpty(tile) {

@@ -15,10 +15,10 @@
     <h1>Tic Tac Toe</h1>
 
     <div class="btns">
-      <button class="btns__play" id="play-btn">Play</button>
-      <div class="btns__mark hide" id="mark-btns">
-        <button class="btns__mark__x">X</button>
-        <button class="btns__mark__o">O</button>
+      <button class="btns__play" data-btn="play">Play</button>
+      <div class="btns__wrapper hide" data-btn="wrapper">
+        <button class="btns__mark" data-btn="x">X</button>
+        <button class="btns__mark" data-btn="o">O</button>
       </div>
     </div>
 
@@ -34,6 +34,14 @@
       <div class="tile" data-tile="8"></div>
     </div>
   </main>
+
+  <div class="game-over-modal hide">
+    <div class="game-over-modal__wrapper">
+      <h2 class="game-over-modal__msg"></h2>
+      <button data-btn="play-again">Play Again</button>
+      <button data-btn="history">View Previous Game History</button>
+    </div>
+  </div>
 </body>
 
 </html>
