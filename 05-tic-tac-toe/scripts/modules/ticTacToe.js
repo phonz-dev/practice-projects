@@ -1,14 +1,16 @@
 export class TicTacToe {
-	constructor(board, domBoard) {
+	constructor(board, UI, winnerNode) {
 		this.board = board;
-		this.domBoard = domBoard;
+		this.UI = UI;
+		this.winnerNode = winnerNode;
 		this.playerOne = this.board.markOne;
 		this.playerTwo = this.board.markTwo;
 		this.currentPlayer = this.playerOne;
 	}
 
 	run() {
-		const tiles = Array.from(this.domBoard.children);
+		const tiles = this.UI.getTiles();
+		this.UI.playGame();
 		this.#play(tiles);
 	}
 
@@ -26,8 +28,18 @@ export class TicTacToe {
 		if (tile.textContent) return;
 		this.#markTileNode(tile);
 		this.#updateBoard(tile);
+
+		// const roundResult = this.board.isGameOver(this.board.grid);
+		// if (roundResult) {
+		// 	this.#displayWinner(roundResult);
+		// }
+
 		this.#switchPlayer();
 		this.board.recordCurrentState();
+	}
+
+	#displayWinner(winner) {
+		this.winnerNode.textContent = winner;
 	}
 
 	#markTileNode(tile) {
