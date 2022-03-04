@@ -4,8 +4,7 @@ export class TicTacToeUI {
 	}
 
 	init() {
-		this.#displayMarkOptions();
-		this.#startGame();
+		this.#enableButtons();
 	}
 
 	tieMessage() {
@@ -51,9 +50,15 @@ export class TicTacToeUI {
 		});
 	}
 
-	#startGame() {
-		const markBtns = this.#findAllComponents(".btns__mark");
+	enablePlayAgainButton() {
+		const playBtn = this.#findComponent("[data-btn='play-again']");
+		this.#reloadUI(playBtn);
+	}
+
+	#enableButtons() {
+		this.#enablePlayButton();
 		this.#enableReset();
+		const markBtns = this.#findAllComponents(".btns__mark");
 		markBtns.forEach((button) => {
 			button.addEventListener("click", () => {
 				this.#toggleMarkButtons();
@@ -65,16 +70,20 @@ export class TicTacToeUI {
 
 	#enableReset() {
 		const resetBtn = this.#findComponent("[data-btn='reset']");
-		resetBtn.addEventListener("click", () => {
-			window.location.reload();
-		});
+		this.#reloadUI(resetBtn);
 	}
 
-	#displayMarkOptions() {
+	#enablePlayButton() {
 		const playBtn = this.#findComponent("[data-btn='play']");
 		playBtn.addEventListener("click", () => {
 			this.#togglePlayButton();
 			this.#toggleMarkButtons();
+		});
+	}
+
+	#reloadUI(button) {
+		button.addEventListener("click", () => {
+			window.location.reload();
 		});
 	}
 

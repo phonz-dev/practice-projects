@@ -49,6 +49,7 @@ export class TicTacToe {
 	#displayEndGameModal(msg) {
 		this.UI.displayEndGameMessage(msg);
 		this.UI.toggleEndGameModal();
+		this.UI.enablePlayAgainButton();
 		this.UI.enableHistoryButtons();
 	}
 
