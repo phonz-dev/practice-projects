@@ -1,20 +1,19 @@
 export class TicTacToeUI {
-	constructor(board, buttons) {
-		this.board = board;
-		this.buttons = buttons;
+	constructor(components) {
+		this.components = components;
+		this.userPick = null;
 	}
 
 	playGame() {
-		const playBtn = this.findComponent(this.buttons, "[data-btn='play']");
-		const xBtn = this.findComponent(this.buttons, "[data-btn='x']");
-		const markBtns = this.getParent(xBtn);
+		const playBtn = this.findComponent("[data-btn='play']");
+		const markBtns = this.findAllComponents(".btns__mark");
 
 		playBtn.addEventListener("click", () => {
 			this.togglePlayButton();
 			this.toggleMarkButtons();
 		});
 
-		Array.from(markBtns.children).forEach((button) => {
+		markBtns.forEach((button) => {
 			button.addEventListener("click", () => {
 				this.toggleMarkButtons();
 				this.toggleBoard();
@@ -23,35 +22,36 @@ export class TicTacToeUI {
 	}
 
 	getTiles() {
-		const tiles = Array.from(this.board.children);
+		const tiles = this.findAllComponents(".tile");
 		return tiles;
 	}
 
 	toggleBoard() {
-		this.toggleComponentDisplay(this.board);
+		const board = this.findComponent(".board");
+		this.toggleComponentDisplay(board);
 	}
 
 	togglePlayButton() {
-		const playBtn = this.findComponent(this.buttons, "[data-btn='play']");
+		const playBtn = this.findComponent("[data-btn='play']");
 		this.toggleComponentDisplay(playBtn);
 	}
 
 	toggleMarkButtons() {
-		const xBtn = this.findComponent(this.buttons, "[data-btn='x']");
-		const btnsContainer = this.getParent(xBtn);
-		this.toggleComponentDisplay(btnsContainer);
+		const markBtnsWrapper = this.findComponent("[data-btn='wrapper']");
+		this.toggleComponentDisplay(markBtnsWrapper);
 	}
 
 	toggleComponentDisplay(component) {
 		component.classList.toggle("hide");
 	}
 
-	getParent(component) {
-		return component.parentElement;
+	findComponent(selector) {
+		const component = this.components.find((node) => node.matches(selector));
+		return component;
 	}
 
-	findComponent(container, selector) {
-		const component = container.find((node) => node.matches(selector));
-		return component;
+	findAllComponents(selector) {
+		const components = this.components.filter((node) => node.matches(selector));
+		return components;
 	}
 }
