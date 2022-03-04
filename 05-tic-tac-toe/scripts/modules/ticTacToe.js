@@ -13,6 +13,13 @@ export class TicTacToe {
 		this.#startGame(tiles);
 	}
 
+	parseBoard(board) {
+		const uiTiles = this.UI.getTiles();
+		const boardTiles = board.flat();
+
+		uiTiles.forEach((tile, i) => (tile.textContent = boardTiles[i]));
+	}
+
 	#startGame(tiles) {
 		tiles.forEach((tile) => this.#processTile(tile));
 	}
@@ -26,15 +33,24 @@ export class TicTacToe {
 	#processRound(tile) {
 		if (tile.textContent) return;
 		this.#processBoard(tile);
+		this.#checkWinner();
+	}
 
+	#checkWinner() {
 		const roundResult = this.board.isGameOver();
 		if (roundResult) {
 			const msg = this.#getEndGameMessage(roundResult);
-			this.UI.displayEndGameMessage(msg);
-			this.UI.displayEndGameModal();
+			this.#displayEndGameModal(msg);
+			this.#enableHistoryScanning();
 		} else {
 			this.#switchPlayer();
 		}
+	}
+
+	#displayEndGameModal(msg) {
+		this.UI.displayEndGameMessage(msg);
+		this.UI.toggleEndGameModal();
+		this.UI.enableHistoryButtons();
 	}
 
 	#getEndGameMessage(result) {
@@ -65,5 +81,26 @@ export class TicTacToe {
 		} else {
 			this.currentPlayer = this.playerOne;
 		}
+	}
+
+	#enableHistoryScanning() {
+		const history = this.board.history;
+		let pointer = history.length - 1;
+		const prevBtn = this.UI.getPreviousButton();
+		const nextBtn = this.UI.getNextButton();
+
+		prevBtn.addEventListener("click", () => {
+			if (pointer > 0) {
+				pointer -= 1;
+				this.parseBoard(history[pointer]);
+			}
+		});
+
+		nextBtn.addEventListener("click", () => {
+			if (pointer < history.length - 1) {
+				pointer += 1;
+				this.parseBoard(history[pointer]);
+			}
+		});
 	}
 }

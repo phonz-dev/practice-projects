@@ -8,7 +8,7 @@ export class TicTacToeUI {
 		this.#startGame();
 	}
 
-	displayEndGameModal() {
+	toggleEndGameModal() {
 		const modal = this.#findComponent(".game-over-modal");
 		this.#toggleComponentDisplay(modal);
 	}
@@ -26,13 +26,33 @@ export class TicTacToeUI {
 		return `${winner} has won!`;
 	}
 
+	markTile(tile, mark) {
+		tile.textContent = mark;
+	}
+
 	getTiles() {
 		const tiles = this.#findAllComponents(".tile");
 		return tiles;
 	}
 
-	markTile(tile, mark) {
-		tile.textContent = mark;
+	getPreviousButton() {
+		return this.#findComponent("[data-btn='prev']");
+	}
+
+	getNextButton() {
+		return this.#findComponent("[data-btn='next']");
+	}
+
+	enableReset() {
+		const resetBtn = this.#findComponent("[data-btn='reset']");
+		resetBtn.addEventListener("click", () => {
+			window.location.reload();
+		});
+	}
+
+	resetTiles() {
+		const tiles = this.getTiles();
+		tiles.forEach((tile) => (tile.textContent = ""));
 	}
 
 	#displayMarkOptions() {
@@ -45,12 +65,19 @@ export class TicTacToeUI {
 
 	#startGame() {
 		const markBtns = this.#findAllComponents(".btns__mark");
+		this.enableReset();
 		markBtns.forEach((button) => {
 			button.addEventListener("click", () => {
 				this.#toggleMarkButtons();
 				this.#toggleBoard();
+				this.#toggleResetButton();
 			});
 		});
+	}
+
+	#toggleResetButton() {
+		const button = this.#findComponent("[data-btn='reset']");
+		this.#toggleComponentDisplay(button);
 	}
 
 	#toggleBoard() {
@@ -66,6 +93,19 @@ export class TicTacToeUI {
 	#toggleMarkButtons() {
 		const markBtnsWrapper = this.#findComponent("[data-btn='wrapper']");
 		this.#toggleComponentDisplay(markBtnsWrapper);
+	}
+
+	enableHistoryButtons() {
+		const button = this.#findComponent("[data-btn='history']");
+		button.addEventListener("click", () => {
+			this.toggleEndGameModal();
+			this.#toggleHistoryButtons();
+		});
+	}
+
+	#toggleHistoryButtons() {
+		const buttons = this.#findComponent("[data-btn='history-btns'");
+		this.#toggleComponentDisplay(buttons);
 	}
 
 	#toggleComponentDisplay(component) {

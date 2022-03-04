@@ -32,6 +32,19 @@ export class Board {
 		this.grid[row][col] = mark;
 	}
 
+	reset() {
+		this.clearGrid();
+		this.clearHistory();
+	}
+
+	clearGrid() {
+		this.grid.forEach((row) => row.forEach((_, i) => (row[i] = "")));
+	}
+
+	clearHistory() {
+		this.history = [];
+	}
+
 	isGameOver() {
 		return (
 			this.#isRowComplete(this.grid) ||
