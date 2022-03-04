@@ -39,6 +39,7 @@ export class TicTacToe {
 		const roundResult = this.board.isGameOver();
 		if (roundResult) {
 			const msg = this.#getEndGameMessage(roundResult);
+			this.UI.toggleBGBlur();
 			this.#displayEndGameModal(msg);
 			this.#enableHistoryScanning();
 		} else {

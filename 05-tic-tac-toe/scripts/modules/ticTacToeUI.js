@@ -19,6 +19,16 @@ export class TicTacToeUI {
 		tile.textContent = mark;
 	}
 
+	getContainer() {
+		const container = this.#findComponent(".container");
+		return container;
+	}
+
+	toggleBGBlur() {
+		const container = this.#findComponent(".container");
+		container.classList.toggle("blur");
+	}
+
 	getTiles() {
 		const tiles = this.#findAllComponents(".tile");
 		return tiles;
@@ -47,6 +57,7 @@ export class TicTacToeUI {
 		button.addEventListener("click", () => {
 			this.toggleEndGameModal();
 			this.#toggleHistoryButtons();
+			this.toggleBGBlur();
 		});
 	}
 
@@ -55,7 +66,13 @@ export class TicTacToeUI {
 		this.#reloadUI(playBtn);
 	}
 
+	#getTicTacToeLetters() {
+		const letters = this.#findAllComponents("span");
+		return letters;
+	}
+
 	#enableButtons() {
+		this.#animateTicTacToe();
 		this.#enablePlayButton();
 		this.#enableReset();
 		const markBtns = this.#findAllComponents(".btns__mark");
@@ -79,6 +96,21 @@ export class TicTacToeUI {
 			this.#togglePlayButton();
 			this.#toggleMarkButtons();
 		});
+	}
+
+	#animateTicTacToe() {
+		const letters = this.#getTicTacToeLetters();
+		let char = 0;
+		const timer = setInterval(() => {
+			const letter = letters[char];
+			letter.classList.add("fade");
+			char++;
+
+			if (char === letters.length) {
+				clearInterval(timer);
+				return;
+			}
+		}, 50);
 	}
 
 	#reloadUI(button) {
