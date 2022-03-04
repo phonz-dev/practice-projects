@@ -8,16 +8,6 @@ export class TicTacToeUI {
 		this.#startGame();
 	}
 
-	toggleEndGameModal() {
-		const modal = this.#findComponent(".game-over-modal");
-		this.#toggleComponentDisplay(modal);
-	}
-
-	displayEndGameMessage(message) {
-		const component = this.#findComponent(".game-over-modal__msg");
-		component.textContent = message;
-	}
-
 	tieMessage() {
 		return "Tie Game!";
 	}
@@ -43,16 +33,41 @@ export class TicTacToeUI {
 		return this.#findComponent("[data-btn='next']");
 	}
 
-	enableReset() {
+	toggleEndGameModal() {
+		const modal = this.#findComponent(".game-over-modal");
+		this.#toggleComponentDisplay(modal);
+	}
+
+	displayEndGameMessage(message) {
+		const component = this.#findComponent(".game-over-modal__msg");
+		component.textContent = message;
+	}
+
+	enableHistoryButtons() {
+		const button = this.#findComponent("[data-btn='history']");
+		button.addEventListener("click", () => {
+			this.toggleEndGameModal();
+			this.#toggleHistoryButtons();
+		});
+	}
+
+	#startGame() {
+		const markBtns = this.#findAllComponents(".btns__mark");
+		this.#enableReset();
+		markBtns.forEach((button) => {
+			button.addEventListener("click", () => {
+				this.#toggleMarkButtons();
+				this.#toggleBoard();
+				this.#toggleResetButton();
+			});
+		});
+	}
+
+	#enableReset() {
 		const resetBtn = this.#findComponent("[data-btn='reset']");
 		resetBtn.addEventListener("click", () => {
 			window.location.reload();
 		});
-	}
-
-	resetTiles() {
-		const tiles = this.getTiles();
-		tiles.forEach((tile) => (tile.textContent = ""));
 	}
 
 	#displayMarkOptions() {
@@ -60,18 +75,6 @@ export class TicTacToeUI {
 		playBtn.addEventListener("click", () => {
 			this.#togglePlayButton();
 			this.#toggleMarkButtons();
-		});
-	}
-
-	#startGame() {
-		const markBtns = this.#findAllComponents(".btns__mark");
-		this.enableReset();
-		markBtns.forEach((button) => {
-			button.addEventListener("click", () => {
-				this.#toggleMarkButtons();
-				this.#toggleBoard();
-				this.#toggleResetButton();
-			});
 		});
 	}
 
@@ -93,14 +96,6 @@ export class TicTacToeUI {
 	#toggleMarkButtons() {
 		const markBtnsWrapper = this.#findComponent("[data-btn='wrapper']");
 		this.#toggleComponentDisplay(markBtnsWrapper);
-	}
-
-	enableHistoryButtons() {
-		const button = this.#findComponent("[data-btn='history']");
-		button.addEventListener("click", () => {
-			this.toggleEndGameModal();
-			this.#toggleHistoryButtons();
-		});
 	}
 
 	#toggleHistoryButtons() {

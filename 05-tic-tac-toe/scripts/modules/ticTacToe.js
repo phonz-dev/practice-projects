@@ -13,13 +13,6 @@ export class TicTacToe {
 		this.#startGame(tiles);
 	}
 
-	parseBoard(board) {
-		const uiTiles = this.UI.getTiles();
-		const boardTiles = board.flat();
-
-		uiTiles.forEach((tile, i) => (tile.textContent = boardTiles[i]));
-	}
-
 	#startGame(tiles) {
 		tiles.forEach((tile) => this.#processTile(tile));
 	}
@@ -34,6 +27,12 @@ export class TicTacToe {
 		if (tile.textContent) return;
 		this.#processBoard(tile);
 		this.#checkWinner();
+	}
+
+	#processBoard(tile) {
+		this.UI.markTile(tile, this.currentPlayer);
+		this.#updateBoard(tile);
+		this.board.recordCurrentState();
 	}
 
 	#checkWinner() {
@@ -62,12 +61,6 @@ export class TicTacToe {
 		}
 	}
 
-	#processBoard(tile) {
-		this.UI.markTile(tile, this.currentPlayer);
-		this.#updateBoard(tile);
-		this.board.recordCurrentState();
-	}
-
 	#updateBoard(tile) {
 		const tileNumberAndPosition = this.board.mapIndexToPosition();
 		const tileNumber = tile.getAttribute("data-tile");
@@ -92,15 +85,21 @@ export class TicTacToe {
 		prevBtn.addEventListener("click", () => {
 			if (pointer > 0) {
 				pointer -= 1;
-				this.parseBoard(history[pointer]);
+				this.#parseBoard(history[pointer]);
 			}
 		});
 
 		nextBtn.addEventListener("click", () => {
 			if (pointer < history.length - 1) {
 				pointer += 1;
-				this.parseBoard(history[pointer]);
+				this.#parseBoard(history[pointer]);
 			}
 		});
+	}
+
+	#parseBoard(board) {
+		const uiTiles = this.UI.getTiles();
+		const boardTiles = board.flat();
+		uiTiles.forEach((tile, i) => (tile.textContent = boardTiles[i]));
 	}
 }
