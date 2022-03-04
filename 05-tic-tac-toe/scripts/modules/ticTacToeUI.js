@@ -21,6 +21,16 @@ export class TicTacToeUI {
 		});
 	}
 
+	displayEndGameModal() {
+		const modal = this.findComponent(".game-over-modal");
+		this.toggleComponentDisplay(modal);
+	}
+
+	displayWinner(winner) {
+		const winnerComponent = this.findComponent(".winner");
+		winnerComponent.textContent = winner;
+	}
+
 	getTiles() {
 		const tiles = this.findAllComponents(".tile");
 		return tiles;

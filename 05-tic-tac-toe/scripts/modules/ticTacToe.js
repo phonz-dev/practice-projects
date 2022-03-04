@@ -1,8 +1,7 @@
 export class TicTacToe {
-	constructor(board, UI, winnerNode) {
+	constructor(board, UI) {
 		this.board = board;
 		this.UI = UI;
-		this.winnerNode = winnerNode;
 		this.playerOne = this.board.markOne;
 		this.playerTwo = this.board.markTwo;
 		this.currentPlayer = this.playerOne;
@@ -26,20 +25,21 @@ export class TicTacToe {
 
 	#processRound(tile) {
 		if (tile.textContent) return;
-		this.#markTileNode(tile);
-		this.#updateBoard(tile);
+		this.#processBoard(tile);
 
-		// const roundResult = this.board.isGameOver(this.board.grid);
-		// if (roundResult) {
-		// 	this.#displayWinner(roundResult);
-		// }
-
-		this.#switchPlayer();
-		this.board.recordCurrentState();
+		const roundResult = this.board.isGameOver();
+		if (roundResult) {
+			this.UI.displayWinner(roundResult);
+			this.UI.displayEndGameModal();
+		} else {
+			this.#switchPlayer();
+		}
 	}
 
-	#displayWinner(winner) {
-		this.winnerNode.textContent = winner;
+	#processBoard(tile) {
+		this.#markTileNode(tile);
+		this.#updateBoard(tile);
+		this.board.recordCurrentState();
 	}
 
 	#markTileNode(tile) {
