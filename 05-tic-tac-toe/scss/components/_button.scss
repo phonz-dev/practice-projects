@@ -2,26 +2,35 @@
 	&__wrapper {
 		display: flex;
 		gap: 10px;
+		margin-bottom: 1.5rem;
 		position: relative;
 	}
 
-	&__play-wrapper {
+	&__play-wrapper,
+	&__reset-wrapper {
 		position: relative;
 	}
 
 	&__play {
-		top: 50px;
 		animation-delay: 1s;
+	}
+
+	&__play,
+	&__reset {
+		top: 50px;
 		animation-name: move-up;
 	}
 
-	&--history {
-		margin-bottom: 1.5rem;
+	&--undo-redo {
+		margin-bottom: 3.5rem;
 	}
 
 	&--x,
 	&--o,
-	&__play {
+	&-undo,
+	&-redo,
+	&__play,
+	&__reset {
 		position: absolute;
 		opacity: 0;
 		animation-duration: 0.8s;
@@ -35,12 +44,19 @@
 		max-width: 115px;
 	}
 
-	&--x {
+	&-undo,
+	&-redo {
+		max-width: 145px;
+	}
+
+	&--x,
+	&-undo {
 		left: -50px;
 		animation-name: move-right;
 	}
 
-	&--o {
+	&--o,
+	&-redo {
 		right: -50px;
 		animation-name: move-left;
 	}

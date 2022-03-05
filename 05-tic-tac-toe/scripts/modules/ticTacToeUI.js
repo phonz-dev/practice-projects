@@ -57,6 +57,7 @@ export class TicTacToeUI {
 		button.addEventListener("click", () => {
 			this.toggleEndGameModal();
 			this.#toggleHistoryButtons();
+			this.#toggleUndoRedo();
 			this.toggleBGBlur();
 		});
 	}
@@ -75,9 +76,15 @@ export class TicTacToeUI {
 			button.addEventListener("click", () => {
 				this.#toggleMarkButtons();
 				this.#toggleBoard();
+				this.#toggleUndoRedo();
 				this.#toggleResetButton();
 			});
 		});
+	}
+
+	#toggleUndoRedo() {
+		const buttons = this.#findComponent("[data-btn='undo-redo']");
+		this.#toggleComponentDisplay(buttons);
 	}
 
 	#toggleFade(component) {

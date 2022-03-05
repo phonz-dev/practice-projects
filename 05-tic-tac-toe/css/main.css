@@ -50,25 +50,29 @@ span {
   width: 90%;
   height: 100vh;
   margin: 0 auto;
+  position: relative;
 }
 
 .btns__wrapper {
   display: flex;
   gap: 10px;
+  margin-bottom: 1.5rem;
   position: relative;
 }
-.btns__play-wrapper {
+.btns__play-wrapper, .btns__reset-wrapper {
   position: relative;
 }
 .btns__play {
-  top: 50px;
   animation-delay: 1s;
+}
+.btns__play, .btns__reset {
+  top: 50px;
   animation-name: move-up;
 }
-.btns--history {
-  margin-bottom: 1.5rem;
+.btns--undo-redo {
+  margin-bottom: 3.5rem;
 }
-.btns--x, .btns--o, .btns__play {
+.btns--x, .btns--o, .btns-undo, .btns-redo, .btns__play, .btns__reset {
   position: absolute;
   opacity: 0;
   animation-duration: 0.8s;
@@ -79,11 +83,14 @@ span {
 .btns--x, .btns--o {
   max-width: 115px;
 }
-.btns--x {
+.btns-undo, .btns-redo {
+  max-width: 145px;
+}
+.btns--x, .btns-undo {
   left: -50px;
   animation-name: move-right;
 }
-.btns--o {
+.btns--o, .btns-redo {
   right: -50px;
   animation-name: move-left;
 }
