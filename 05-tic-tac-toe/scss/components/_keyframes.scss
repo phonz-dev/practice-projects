@@ -1,12 +1,12 @@
 @keyframes move-up {
 	from {
-		transform: translateY(50px);
+		top: 50px;
 		opacity: 0;
 		visibility: hidden;
 	}
 
 	to {
-		transform: translateY(0);
+		top: 0;
 		opacity: 1;
 		visibility: visible;
 	}
@@ -14,13 +14,13 @@
 
 @keyframes move-right {
 	from {
-		transform: translateX(-50px);
+		left: -50px;
 		opacity: 0;
 		visibility: hidden;
 	}
 
 	to {
-		transform: translateX(0);
+		left: 0;
 		opacity: 1;
 		visibility: visible;
 	}
@@ -28,14 +28,24 @@
 
 @keyframes move-left {
 	from {
-		transform: translateX(50px);
+		right: -50px;
 		opacity: 0;
 		visibility: hidden;
 	}
 
 	to {
-		transform: translateX(0);
+		right: 0;
 		opacity: 1;
 		visibility: visible;
+	}
+}
+
+@keyframes scale {
+	from {
+		transform: scale(0);
+	}
+
+	to {
+		transform: scale(1);
 	}
 }

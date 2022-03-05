@@ -57,8 +57,11 @@ span {
   gap: 10px;
   position: relative;
 }
+.btns__play-wrapper {
+  position: relative;
+}
 .btns__play {
-  transform: translateY(50px);
+  top: 50px;
   animation-delay: 1s;
   animation-name: move-up;
 }
@@ -66,18 +69,22 @@ span {
   margin-bottom: 1.5rem;
 }
 .btns--x, .btns--o, .btns__play {
+  position: absolute;
   opacity: 0;
   animation-duration: 0.8s;
   animation-timing-function: ease;
   animation-fill-mode: forwards;
   visibility: hidden;
 }
+.btns--x, .btns--o {
+  max-width: 115px;
+}
 .btns--x {
-  transform: translateX(-50px);
+  left: -50px;
   animation-name: move-right;
 }
 .btns--o {
-  transform: translateX(50px);
+  right: -50px;
   animation-name: move-left;
 }
 
@@ -87,6 +94,11 @@ span {
   margin-bottom: 1.5rem;
   display: grid;
   grid-template: repeat(3, 1fr)/repeat(3, 1fr);
+  transition: background 0.3s ease-in-out;
+  transform: scale(0);
+  animation-duration: 0.8s;
+  animation-name: scale;
+  animation-fill-mode: forwards;
 }
 
 .tile {
@@ -94,7 +106,6 @@ span {
   display: grid;
   place-content: center;
   font-size: 4em;
-  transition: background 0.3s ease;
 }
 .tile:hover {
   background-color: #3d4771;
@@ -142,38 +153,46 @@ span {
 
 @keyframes move-up {
   from {
-    transform: translateY(50px);
+    top: 50px;
     opacity: 0;
     visibility: hidden;
   }
   to {
-    transform: translateY(0);
+    top: 0;
     opacity: 1;
     visibility: visible;
   }
 }
 @keyframes move-right {
   from {
-    transform: translateX(-50px);
+    left: -50px;
     opacity: 0;
     visibility: hidden;
   }
   to {
-    transform: translateX(0);
+    left: 0;
     opacity: 1;
     visibility: visible;
   }
 }
 @keyframes move-left {
   from {
-    transform: translateX(50px);
+    right: -50px;
     opacity: 0;
     visibility: hidden;
   }
   to {
-    transform: translateX(0);
+    right: 0;
     opacity: 1;
     visibility: visible;
+  }
+}
+@keyframes scale {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
   }
 }
 

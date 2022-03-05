@@ -5,8 +5,12 @@
 		position: relative;
 	}
 
+	&__play-wrapper {
+		position: relative;
+	}
+
 	&__play {
-		transform: translateY(50px);
+		top: 50px;
 		animation-delay: 1s;
 		animation-name: move-up;
 	}
@@ -18,6 +22,7 @@
 	&--x,
 	&--o,
 	&__play {
+		position: absolute;
 		opacity: 0;
 		animation-duration: 0.8s;
 		animation-timing-function: ease;
@@ -25,13 +30,18 @@
 		visibility: hidden;
 	}
 
+	&--x,
+	&--o {
+		max-width: 115px;
+	}
+
 	&--x {
-		transform: translateX(-50px);
+		left: -50px;
 		animation-name: move-right;
 	}
 
 	&--o {
-		transform: translateX(50px);
+		right: -50px;
 		animation-name: move-left;
 	}
 }

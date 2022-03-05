@@ -4,4 +4,9 @@
 	margin-bottom: 1.5rem;
 	display: grid;
 	grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+	transition: background 0.3s ease-in-out;
+	transform: scale(0);
+	animation-duration: 0.8s;
+	animation-name: scale;
+	animation-fill-mode: forwards;
 }
