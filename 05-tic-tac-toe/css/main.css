@@ -59,18 +59,13 @@ span {
 }
 .btns__play {
   transform: translateY(50px);
-  visibility: hidden;
-  opacity: 0;
   animation-delay: 1s;
-  animation-duration: 0.8s;
   animation-name: move-up;
-  animation-timing-function: ease;
-  animation-fill-mode: forwards;
 }
 .btns--history {
   margin-bottom: 1.5rem;
 }
-.btns--x, .btns--o {
+.btns--x, .btns--o, .btns__play {
   opacity: 0;
   animation-duration: 0.8s;
   animation-timing-function: ease;
