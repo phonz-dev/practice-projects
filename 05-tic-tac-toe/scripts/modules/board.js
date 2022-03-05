@@ -7,7 +7,22 @@ export class Board {
 		];
 		this.markOne = markOne;
 		this.markTwo = markTwo;
-		this.history = [];
+		this.boardStates = [];
+		this.boardStatesPointer = -1;
+	}
+
+	getPrevState() {
+		if (this.boardStatesPointer > 0) {
+			this.boardStatesPointer--;
+			return this.boardStates[this.boardStatesPointer];
+		}
+	}
+
+	getNextState() {
+		if (this.boardStatesPointer < this.boardStates.length) {
+			this.boardStatesPointer++;
+			return this.boardStates[this.boardStatesPointer];
+		}
 	}
 
 	getPositions() {
@@ -24,7 +39,8 @@ export class Board {
 
 	recordCurrentState() {
 		const currBoardState = this.grid.map((row) => row.slice());
-		this.history.push(currBoardState);
+		this.boardStates.push(currBoardState);
+		this.boardStatesPointer++;
 	}
 
 	placeMark(pos, mark) {

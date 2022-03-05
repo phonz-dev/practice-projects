@@ -79,23 +79,23 @@ export class TicTacToe {
 	}
 
 	#enableHistoryScanning() {
-		const history = this.board.history;
-		let pointer = history.length - 1;
+		this.#enablePrevButton();
+		this.#enableNextButton();
+	}
+
+	#enablePrevButton() {
 		const prevBtn = this.UI.getPreviousButton();
-		const nextBtn = this.UI.getNextButton();
-
 		prevBtn.addEventListener("click", () => {
-			if (pointer > 0) {
-				pointer -= 1;
-				this.#parseBoard(history[pointer]);
-			}
+			const prevBoard = this.board.getPrevState();
+			this.#parseBoard(prevBoard);
 		});
+	}
 
+	#enableNextButton() {
+		const nextBtn = this.UI.getNextButton();
 		nextBtn.addEventListener("click", () => {
-			if (pointer < history.length - 1) {
-				pointer += 1;
-				this.#parseBoard(history[pointer]);
-			}
+			const nextBoard = this.board.getNextState();
+			this.#parseBoard(nextBoard);
 		});
 	}
 
