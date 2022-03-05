@@ -19,7 +19,7 @@ export class Board {
 	}
 
 	getNextState() {
-		if (this.boardStatesPointer < this.boardStates.length) {
+		if (this.boardStatesPointer < this.boardStates.length - 1) {
 			this.boardStatesPointer++;
 			return this.boardStates[this.boardStatesPointer];
 		}

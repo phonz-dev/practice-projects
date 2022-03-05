@@ -87,7 +87,7 @@ export class TicTacToe {
 		const prevBtn = this.UI.getPreviousButton();
 		prevBtn.addEventListener("click", () => {
 			const prevBoard = this.board.getPrevState();
-			this.#parseBoard(prevBoard);
+			if (prevBoard) this.#parseBoard(prevBoard);
 		});
 	}
 
@@ -95,7 +95,7 @@ export class TicTacToe {
 		const nextBtn = this.UI.getNextButton();
 		nextBtn.addEventListener("click", () => {
 			const nextBoard = this.board.getNextState();
-			this.#parseBoard(nextBoard);
+			if (nextBoard) this.#parseBoard(nextBoard);
 		});
 	}
 
