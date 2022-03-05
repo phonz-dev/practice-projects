@@ -1,7 +1,22 @@
+@keyframes move-up {
+	from {
+		transform: translateY(50px);
+		opacity: 0;
+		visibility: hidden;
+	}
+
+	to {
+		transform: translateY(0);
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
 @keyframes move-right {
 	from {
 		transform: translateX(-50px);
 		opacity: 0;
+		visibility: hidden;
 	}
 
 	to {
@@ -15,6 +30,7 @@
 	from {
 		transform: translateX(50px);
 		opacity: 0;
+		visibility: hidden;
 	}
 
 	to {
