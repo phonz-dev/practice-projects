@@ -24,11 +24,6 @@ export class TicTacToeUI {
 		return container;
 	}
 
-	toggleBGBlur() {
-		const container = this.#findComponent(".container");
-		container.classList.toggle("blur");
-	}
-
 	getTiles() {
 		const tiles = this.#findAllComponents(".tile");
 		return tiles;
@@ -42,14 +37,19 @@ export class TicTacToeUI {
 		return this.#findComponent("[data-btn='next']");
 	}
 
+	displayEndGameMessage(message) {
+		const component = this.#findComponent(".game-over-modal__msg");
+		component.textContent = message;
+	}
+
 	toggleEndGameModal() {
 		const modal = this.#findComponent(".game-over-modal");
 		this.#toggleComponentDisplay(modal);
 	}
 
-	displayEndGameMessage(message) {
-		const component = this.#findComponent(".game-over-modal__msg");
-		component.textContent = message;
+	toggleBGBlur() {
+		const container = this.#findComponent(".container");
+		container.classList.toggle("blur");
 	}
 
 	enableHistoryButtons() {
@@ -64,11 +64,6 @@ export class TicTacToeUI {
 	enablePlayAgainButton() {
 		const playBtn = this.#findComponent("[data-btn='play-again']");
 		this.#reloadUI(playBtn);
-	}
-
-	#getTicTacToeLetters() {
-		const letters = this.#findAllComponents("span");
-		return letters;
 	}
 
 	#enableButtons() {
@@ -95,27 +90,6 @@ export class TicTacToeUI {
 		playBtn.addEventListener("click", () => {
 			this.#togglePlayButton();
 			this.#toggleMarkButtons();
-		});
-	}
-
-	#animateTicTacToe() {
-		const letters = this.#getTicTacToeLetters();
-		let char = 0;
-		const timer = setInterval(() => {
-			const letter = letters[char];
-			letter.classList.add("fade");
-			char++;
-
-			if (char === letters.length) {
-				clearInterval(timer);
-				return;
-			}
-		}, 50);
-	}
-
-	#reloadUI(button) {
-		button.addEventListener("click", () => {
-			window.location.reload();
 		});
 	}
 
@@ -146,6 +120,32 @@ export class TicTacToeUI {
 
 	#toggleComponentDisplay(component) {
 		component.classList.toggle("hide");
+	}
+
+	#animateTicTacToe() {
+		const letters = this.#getTicTacToeLetters();
+		let char = 0;
+		const timer = setInterval(() => {
+			const letter = letters[char];
+			letter.classList.add("fade");
+			char++;
+
+			if (char === letters.length) {
+				clearInterval(timer);
+				return;
+			}
+		}, 50);
+	}
+
+	#getTicTacToeLetters() {
+		const letters = this.#findAllComponents("span");
+		return letters;
+	}
+
+	#reloadUI(button) {
+		button.addEventListener("click", () => {
+			window.location.reload();
+		});
 	}
 
 	#findComponent(selector) {

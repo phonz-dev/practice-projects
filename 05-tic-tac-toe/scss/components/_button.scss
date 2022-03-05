@@ -2,9 +2,29 @@
 	&__wrapper {
 		display: flex;
 		gap: 10px;
+		position: relative;
 	}
 
 	&--history {
 		margin-bottom: 1.5rem;
+	}
+
+	&--x,
+	&--o {
+		opacity: 0;
+		animation-duration: 0.8s;
+		animation-timing-function: ease;
+		animation-fill-mode: forwards;
+		visibility: hidden;
+	}
+
+	&--x {
+		transform: translateX(-50px);
+		animation-name: move-right;
+	}
+
+	&--o {
+		transform: translateX(50px);
+		animation-name: move-left;
 	}
 }

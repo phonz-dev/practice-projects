@@ -1,0 +1,25 @@
+@keyframes move-right {
+	from {
+		transform: translateX(-50px);
+		opacity: 0;
+	}
+
+	to {
+		transform: translateX(0);
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+@keyframes move-left {
+	from {
+		transform: translateX(50px);
+		opacity: 0;
+	}
+
+	to {
+		transform: translateX(0);
+		opacity: 1;
+		visibility: visible;
+	}
+}

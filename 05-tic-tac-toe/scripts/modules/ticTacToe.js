@@ -41,7 +41,6 @@ export class TicTacToe {
 			const msg = this.#getEndGameMessage(roundResult);
 			this.UI.toggleBGBlur();
 			this.#displayEndGameModal(msg);
-			this.#enableHistoryScanning();
 		} else {
 			this.#switchPlayer();
 		}
@@ -52,6 +51,7 @@ export class TicTacToe {
 		this.UI.toggleEndGameModal();
 		this.UI.enablePlayAgainButton();
 		this.UI.enableHistoryButtons();
+		this.#enableHistoryScanning();
 	}
 
 	#getEndGameMessage(result) {

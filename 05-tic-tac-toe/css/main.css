@@ -55,9 +55,25 @@ span {
 .btns__wrapper {
   display: flex;
   gap: 10px;
+  position: relative;
 }
 .btns--history {
   margin-bottom: 1.5rem;
+}
+.btns--x, .btns--o {
+  opacity: 0;
+  animation-duration: 0.8s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  visibility: hidden;
+}
+.btns--x {
+  transform: translateX(-50px);
+  animation-name: move-right;
+}
+.btns--o {
+  transform: translateX(50px);
+  animation-name: move-left;
 }
 
 .board {
@@ -73,6 +89,10 @@ span {
   display: grid;
   place-content: center;
   font-size: 4em;
+  transition: background 0.3s ease;
+}
+.tile:hover {
+  background-color: #3d4771;
 }
 .tile:first-of-type, .tile:nth-of-type(2), .tile:nth-of-type(3) {
   border-top: none;
@@ -113,6 +133,29 @@ span {
 
 .fade {
   opacity: 1;
+}
+
+@keyframes move-right {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+@keyframes move-left {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
