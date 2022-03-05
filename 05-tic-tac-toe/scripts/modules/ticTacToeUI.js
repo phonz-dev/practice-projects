@@ -80,6 +80,10 @@ export class TicTacToeUI {
 		});
 	}
 
+	#toggleFade(component) {
+		component.classList.toggle("fade");
+	}
+
 	#enableReset() {
 		const resetBtn = this.#findComponent("[data-btn='reset']");
 		this.#reloadUI(resetBtn);
@@ -127,7 +131,7 @@ export class TicTacToeUI {
 		let char = 0;
 		const timer = setInterval(() => {
 			const letter = letters[char];
-			letter.classList.add("fade");
+			this.#toggleFade(letter);
 			char++;
 
 			if (char === letters.length) {
