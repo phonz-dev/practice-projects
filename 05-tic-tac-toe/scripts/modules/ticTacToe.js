@@ -2,9 +2,6 @@ export class TicTacToe {
 	constructor(board, UI) {
 		this.board = board;
 		this.UI = UI;
-		this.playerOne = this.board.markOne;
-		this.playerTwo = this.board.markTwo;
-		this.currentPlayer = this.playerOne;
 	}
 
 	run() {
@@ -30,7 +27,7 @@ export class TicTacToe {
 	}
 
 	#processBoard(tile) {
-		this.UI.markTile(tile, this.currentPlayer);
+		this.UI.markTile(tile, this.board.currentPlayer);
 		this.#updateBoard(tile);
 		this.board.recordCurrentState();
 	}
@@ -42,7 +39,7 @@ export class TicTacToe {
 			this.UI.toggleBGBlur();
 			this.#displayEndGameModal(msg);
 		} else {
-			this.#switchPlayer();
+			this.board.switchPlayer();
 		}
 	}
 
@@ -67,15 +64,7 @@ export class TicTacToe {
 		const tileNumberAndPosition = this.board.mapIndexToPosition();
 		const tileNumber = tile.getAttribute("data-tile");
 		const tilePositon = tileNumberAndPosition[tileNumber];
-		this.board.placeMark(tilePositon, this.currentPlayer);
-	}
-
-	#switchPlayer() {
-		if (this.currentPlayer === this.playerOne) {
-			this.currentPlayer = this.playerTwo;
-		} else {
-			this.currentPlayer = this.playerOne;
-		}
+		this.board.placeMark(tilePositon, this.board.currentPlayer);
 	}
 
 	#enableHistoryScanning() {

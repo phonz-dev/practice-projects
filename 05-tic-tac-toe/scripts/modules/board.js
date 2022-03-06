@@ -1,14 +1,34 @@
 export class Board {
-	constructor(markOne, markTwo) {
+	constructor(playerOne, playerTwo) {
 		this.grid = [
 			["", "", ""],
 			["", "", ""],
 			["", "", ""],
 		];
-		this.markOne = markOne;
-		this.markTwo = markTwo;
+		this.playerOne = playerOne;
+		this.playerTwo = playerTwo;
+		this.currentPlayer = this.playerOne;
 		this.boardStates = [];
 		this.boardStatesPointer = -1;
+	}
+
+	placeMark(pos, mark) {
+		const [row, col] = pos;
+		this.grid[row][col] = mark;
+	}
+
+	recordCurrentState() {
+		const currBoardState = this.grid.map((row) => row.slice());
+		this.boardStates.push(currBoardState);
+		this.boardStatesPointer++;
+	}
+
+	switchPlayer() {
+		if (this.currentPlayer === this.playerOne) {
+			this.currentPlayer = this.playerTwo;
+		} else {
+			this.currentPlayer = this.playerOne;
+		}
 	}
 
 	getPrevState() {
@@ -35,30 +55,6 @@ export class Board {
 		const boardPositions = this.getPositions();
 		boardPositions.forEach((pos, i) => (map[i] = pos));
 		return map;
-	}
-
-	recordCurrentState() {
-		const currBoardState = this.grid.map((row) => row.slice());
-		this.boardStates.push(currBoardState);
-		this.boardStatesPointer++;
-	}
-
-	placeMark(pos, mark) {
-		const [row, col] = pos;
-		this.grid[row][col] = mark;
-	}
-
-	reset() {
-		this.clearGrid();
-		this.clearHistory();
-	}
-
-	clearGrid() {
-		this.grid.forEach((row) => row.forEach((_, i) => (row[i] = "")));
-	}
-
-	clearHistory() {
-		this.history = [];
 	}
 
 	isGameOver() {
@@ -110,10 +106,10 @@ export class Board {
 	}
 
 	#checkWinner(grid) {
-		const markOneWon = this.#checkMark(grid, this.markOne);
-		const markTwoWon = this.#checkMark(grid, this.markTwo);
-		if (markOneWon) return this.markOne;
-		if (markTwoWon) return this.markTwo;
+		const playerOneWon = this.#checkMark(grid, this.playerOne);
+		const playerTwoWon = this.#checkMark(grid, this.playerTwo);
+		if (playerOneWon) return this.playerOne;
+		if (playerTwoWon) return this.playerTwo;
 		return false;
 	}
 
@@ -122,6 +118,19 @@ export class Board {
 			return row.every((tile) => tile === mark);
 		});
 		return result;
+	}
+
+	#reset() {
+		this.clearGrid();
+		this.clearHistory();
+	}
+
+	#clearGrid() {
+		this.grid.forEach((row) => row.forEach((_, i) => (row[i] = "")));
+	}
+
+	#clearHistory() {
+		this.history = [];
 	}
 
 	static transpose(grid) {

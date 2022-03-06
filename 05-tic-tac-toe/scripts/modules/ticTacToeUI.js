@@ -37,19 +37,16 @@ export class TicTacToeUI {
 		return this.#findComponent("[data-btn='next']");
 	}
 
+	getUndoButton() {
+		return this.#findComponent("[data-btn='undo']");
+	}
+	getRedoButton() {
+		return this.#findComponent("[data-btn='redo']");
+	}
+
 	displayEndGameMessage(message) {
 		const component = this.#findComponent(".game-over-modal__msg");
 		component.textContent = message;
-	}
-
-	toggleEndGameModal() {
-		const modal = this.#findComponent(".game-over-modal");
-		this.#toggleComponentDisplay(modal);
-	}
-
-	toggleBGBlur() {
-		const container = this.#findComponent(".container");
-		container.classList.toggle("blur");
 	}
 
 	enableHistoryButtons() {
@@ -82,15 +79,6 @@ export class TicTacToeUI {
 		});
 	}
 
-	#toggleUndoRedo() {
-		const buttons = this.#findComponent("[data-btn='undo-redo']");
-		this.#toggleComponentDisplay(buttons);
-	}
-
-	#toggleFade(component) {
-		component.classList.toggle("fade");
-	}
-
 	#enableReset() {
 		const resetBtn = this.#findComponent("[data-btn='reset']");
 		this.#reloadUI(resetBtn);
@@ -102,6 +90,25 @@ export class TicTacToeUI {
 			this.#togglePlayButton();
 			this.#toggleMarkButtons();
 		});
+	}
+
+	toggleEndGameModal() {
+		const modal = this.#findComponent(".game-over-modal");
+		this.#toggleComponentDisplay(modal);
+	}
+
+	toggleBGBlur() {
+		const container = this.#findComponent(".container");
+		container.classList.toggle("blur");
+	}
+
+	#toggleUndoRedo() {
+		const buttons = this.#findComponent("[data-btn='undo-redo']");
+		this.#toggleComponentDisplay(buttons);
+	}
+
+	#toggleFade(component) {
+		component.classList.toggle("fade");
 	}
 
 	#toggleResetButton() {
