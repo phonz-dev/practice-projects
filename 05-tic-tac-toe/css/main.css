@@ -32,6 +32,7 @@ button {
   text-transform: uppercase;
   box-shadow: 0 5px #997e06;
   transition: all 0.1s ease;
+  cursor: pointer;
 }
 
 button:active {
@@ -69,10 +70,7 @@ span {
   top: 50px;
   animation-name: move-up;
 }
-.btns--undo-redo {
-  margin-bottom: 3.5rem;
-}
-.btns--x, .btns--o, .btns-undo, .btns-redo, .btns__play, .btns__reset {
+.btns--x, .btns--o, .btns__play, .btns__reset {
   position: absolute;
   opacity: 0;
   animation-duration: 0.8s;
@@ -83,14 +81,11 @@ span {
 .btns--x, .btns--o {
   max-width: 115px;
 }
-.btns-undo, .btns-redo {
-  max-width: 145px;
-}
-.btns--x, .btns-undo {
+.btns--x {
   left: -50px;
   animation-name: move-right;
 }
-.btns--o, .btns-redo {
+.btns--o {
   right: -50px;
   animation-name: move-left;
 }
@@ -113,6 +108,7 @@ span {
   display: grid;
   place-content: center;
   font-size: 4em;
+  cursor: pointer;
 }
 .tile:hover {
   background-color: #3d4771;
@@ -156,6 +152,12 @@ span {
 
 .fade {
   opacity: 1;
+}
+
+.disabled {
+  background-color: #fae170;
+  transform: translateY(5px);
+  box-shadow: none;
 }
 
 @keyframes move-up {

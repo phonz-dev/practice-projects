@@ -21,14 +21,8 @@
 		animation-name: move-up;
 	}
 
-	&--undo-redo {
-		margin-bottom: 3.5rem;
-	}
-
 	&--x,
 	&--o,
-	&-undo,
-	&-redo,
 	&__play,
 	&__reset {
 		position: absolute;
@@ -44,19 +38,12 @@
 		max-width: 115px;
 	}
 
-	&-undo,
-	&-redo {
-		max-width: 145px;
-	}
-
-	&--x,
-	&-undo {
+	&--x {
 		left: -50px;
 		animation-name: move-right;
 	}
 
-	&--o,
-	&-redo {
+	&--o {
 		right: -50px;
 		animation-name: move-left;
 	}

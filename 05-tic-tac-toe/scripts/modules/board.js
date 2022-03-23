@@ -1,15 +1,11 @@
 export class Board {
 	constructor(playerOne, playerTwo) {
-		this.grid = [
-			["", "", ""],
-			["", "", ""],
-			["", "", ""],
-		];
+		this.grid = Board.emptyGrid();
 		this.playerOne = playerOne;
 		this.playerTwo = playerTwo;
 		this.currentPlayer = this.playerOne;
-		this.boardStates = [];
-		this.boardStatesPointer = -1;
+		this.boardStates = [Board.emptyGrid()];
+		this.boardStatesPointer = 0;
 	}
 
 	placeMark(pos, mark) {
@@ -18,9 +14,13 @@ export class Board {
 	}
 
 	recordCurrentState() {
-		const currBoardState = this.grid.map((row) => row.slice());
-		this.boardStates.push(currBoardState);
+		const currState = this.copyCurrentState();
+		this.boardStates.push(currState);
 		this.boardStatesPointer++;
+	}
+
+	copyCurrentState() {
+		return this.grid.map((row) => row.slice());
 	}
 
 	switchPlayer() {
@@ -31,11 +31,20 @@ export class Board {
 		}
 	}
 
+	isBoardStatesEmpty() {
+		return this.boardStatesPointer === 0;
+	}
+
+	isBoardStatesFull() {
+		return this.boardStatesPointer === this.boardStates.length - 1;
+	}
+
 	getPrevState() {
-		if (this.boardStatesPointer > 0) {
-			this.boardStatesPointer--;
+		if (!this.boardStatesPointer) {
 			return this.boardStates[this.boardStatesPointer];
 		}
+		this.boardStatesPointer--;
+		return this.boardStates[this.boardStatesPointer];
 	}
 
 	getNextState() {
@@ -120,17 +129,12 @@ export class Board {
 		return result;
 	}
 
-	#reset() {
-		this.clearGrid();
-		this.clearHistory();
-	}
-
-	#clearGrid() {
-		this.grid.forEach((row) => row.forEach((_, i) => (row[i] = "")));
-	}
-
-	#clearHistory() {
-		this.history = [];
+	static emptyGrid() {
+		return [
+			["", "", ""],
+			["", "", ""],
+			["", "", ""],
+		];
 	}
 
 	static transpose(grid) {

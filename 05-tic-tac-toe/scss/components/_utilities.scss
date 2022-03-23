@@ -1,3 +1,5 @@
+@use "./globals" as *;
+
 .hide {
 	display: none;
 }
@@ -8,4 +10,10 @@
 
 .fade {
 	opacity: 1;
+}
+
+.disabled {
+	background-color: lighten($btn-bg-clr, 15%);
+	transform: translateY(5px);
+	box-shadow: none;
 }

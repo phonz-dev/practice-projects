@@ -12,7 +12,7 @@ export class TicTacToeUI {
 	}
 
 	winnerMessage(winner) {
-		return `${winner} has won!`;
+		return `${winner} wins!`;
 	}
 
 	markTile(tile, mark) {
@@ -37,16 +37,36 @@ export class TicTacToeUI {
 		return this.#findComponent("[data-btn='next']");
 	}
 
-	getUndoButton() {
-		return this.#findComponent("[data-btn='undo']");
-	}
-	getRedoButton() {
-		return this.#findComponent("[data-btn='redo']");
-	}
-
 	displayEndGameMessage(message) {
 		const component = this.#findComponent(".game-over-modal__msg");
 		component.textContent = message;
+	}
+
+	disablePreviousButton() {
+		const prevBtn = this.getPreviousButton();
+		this.disable(prevBtn);
+	}
+
+	disableNextButton() {
+		const nextBtn = this.getNextButton();
+		this.disable(nextBtn);
+	}
+
+	disable(component) {
+		component.classList.add("disabled");
+	}
+	enablePreviousButton() {
+		const prevBtn = this.getPreviousButton();
+		this.enable(prevBtn);
+	}
+
+	enableNextButton() {
+		const nextBtn = this.getNextButton();
+		this.enable(nextBtn);
+	}
+
+	enable(component) {
+		component.classList.remove("disabled");
 	}
 
 	enableHistoryButtons() {
@@ -54,7 +74,6 @@ export class TicTacToeUI {
 		button.addEventListener("click", () => {
 			this.toggleEndGameModal();
 			this.#toggleHistoryButtons();
-			this.#toggleUndoRedo();
 			this.toggleBGBlur();
 		});
 	}
@@ -73,7 +92,6 @@ export class TicTacToeUI {
 			button.addEventListener("click", () => {
 				this.#toggleMarkButtons();
 				this.#toggleBoard();
-				this.#toggleUndoRedo();
 				this.#toggleResetButton();
 			});
 		});
@@ -100,11 +118,6 @@ export class TicTacToeUI {
 	toggleBGBlur() {
 		const container = this.#findComponent(".container");
 		container.classList.toggle("blur");
-	}
-
-	#toggleUndoRedo() {
-		const buttons = this.#findComponent("[data-btn='undo-redo']");
-		this.#toggleComponentDisplay(buttons);
 	}
 
 	#toggleFade(component) {
